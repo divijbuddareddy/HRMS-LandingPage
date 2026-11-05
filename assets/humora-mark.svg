@@ -1,42 +1,55 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 340" role="img" aria-label="Humora">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="200 296 828 704" role="img" aria-label="Humora">
+  <title>Humora</title>
   <defs>
-    <linearGradient id="hm-head-l" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#3FE0FF"/>
-      <stop offset="1" stop-color="#0A9BF5"/>
+    <linearGradient id="hm-head-l" x1="0" y1="0" x2=".4" y2="1">
+      <stop offset="0" stop-color="#00E8FF"/>
+      <stop offset="1" stop-color="#0A8EF2"/>
     </linearGradient>
-    <linearGradient id="hm-head-r" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#C56BFF"/>
-      <stop offset="1" stop-color="#7A2EF6"/>
+    <linearGradient id="hm-head-r" x1="0" y1="0" x2=".4" y2="1">
+      <stop offset="0" stop-color="#C651FF"/>
+      <stop offset="1" stop-color="#6418F0"/>
     </linearGradient>
-    <linearGradient id="hm-leg-l" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#1FD6FA"/>
-      <stop offset="1" stop-color="#0A8DEB"/>
+    <linearGradient id="hm-body-l" gradientUnits="userSpaceOnUse" x1="260" y1="580" x2="360" y2="990">
+      <stop offset="0" stop-color="#05EAFF"/>
+      <stop offset="1" stop-color="#00A3F5"/>
     </linearGradient>
-    <linearGradient id="hm-leg-r" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#8E44FF"/>
-      <stop offset="1" stop-color="#5A1FE0"/>
+    <linearGradient id="hm-body-r" gradientUnits="userSpaceOnUse" x1="660" y1="720" x2="1010" y2="640">
+      <stop offset="0" stop-color="#3D36FF"/>
+      <stop offset=".55" stop-color="#8126FA"/>
+      <stop offset="1" stop-color="#A63CFF"/>
     </linearGradient>
-    <linearGradient id="hm-ribbon" gradientUnits="userSpaceOnUse" x1="30" y1="0" x2="360" y2="0">
-      <stop offset="0" stop-color="#1ED8FB"/>
-      <stop offset=".45" stop-color="#3FA8FF"/>
-      <stop offset="1" stop-color="#7B2FF7"/>
+    <linearGradient id="hm-under-l" gradientUnits="userSpaceOnUse" x1="490" y1="760" x2="300" y2="980">
+      <stop offset="0" stop-color="#053A73"/>
+      <stop offset="1" stop-color="#0A8FD8"/>
     </linearGradient>
-    <linearGradient id="hm-fold" gradientUnits="userSpaceOnUse" x1="250" y1="0" x2="370" y2="0">
-      <stop offset="0" stop-color="#3B0FA8" stop-opacity=".55"/>
-      <stop offset="1" stop-color="#3B0FA8" stop-opacity="0"/>
+    <linearGradient id="hm-under-r" gradientUnits="userSpaceOnUse" x1="740" y1="770" x2="900" y2="990">
+      <stop offset="0" stop-color="#2E00A8"/>
+      <stop offset="1" stop-color="#7A16F5"/>
     </linearGradient>
-    <clipPath id="hm-clip-r"><rect x="246" y="172" width="128" height="164" rx="64"/></clipPath>
+    <linearGradient id="hm-ribbon" gradientUnits="userSpaceOnUse" x1="420" y1="0" x2="950" y2="0">
+      <stop offset="0" stop-color="#0CDDFF" stop-opacity="0"/>
+      <stop offset=".17" stop-color="#22D3FF" stop-opacity="1"/>
+      <stop offset=".38" stop-color="#47C2FF"/>
+      <stop offset=".62" stop-color="#5A86FF"/>
+      <stop offset=".82" stop-color="#6A3CFF"/>
+      <stop offset="1" stop-color="#8E25F5"/>
+    </linearGradient>
+    <clipPath id="hm-clip-l"><path d="M210 760 C210 650 300 563 415 563 L495 600 L495 850 A142.5 142.5 0 0 1 210 850 Z"/></clipPath>
+    <clipPath id="hm-clip-r"><path d="M625 635 C690 598 760 563 835 563 C940 563 1018 650 1018 760 L1018 850 A143 143 0 0 1 732 850 L732 760 Z"/></clipPath>
   </defs>
+
   <!-- heads -->
-  <circle cx="74" cy="58" r="50" fill="url(#hm-head-l)"/>
-  <circle cx="300" cy="76" r="48" fill="url(#hm-head-r)"/>
-  <!-- legs -->
-  <rect x="8" y="150" width="128" height="186" rx="64" fill="url(#hm-leg-l)"/>
-  <rect x="246" y="172" width="128" height="164" rx="64" fill="url(#hm-leg-r)"/>
-  <!-- depth where the ribbon folds into the right leg -->
-  <path d="M246 236 C 290 238, 330 262, 374 300 L 374 336 L 246 336 Z" fill="url(#hm-fold)" clip-path="url(#hm-clip-r)"/>
-  <!-- ribbon joining the two people -->
-  <path d="M72 214 C 140 150, 214 168, 310 236" fill="none" stroke="url(#hm-ribbon)" stroke-width="128" stroke-linecap="round"/>
-  <!-- soft highlight along the ribbon -->
-  <path d="M60 176 C 130 120, 210 136, 292 190" fill="none" stroke="#FFFFFF" stroke-opacity=".18" stroke-width="16" stroke-linecap="round"/>
+  <circle cx="416" cy="430" r="120" fill="url(#hm-head-l)"/>
+  <circle cx="832" cy="430" r="121" fill="url(#hm-head-r)"/>
+
+  <!-- right person -->
+  <path d="M625 635 C690 598 760 563 835 563 C940 563 1018 650 1018 760 L1018 850 A143 143 0 0 1 732 850 L732 760 Z" fill="url(#hm-body-r)"/>
+  <path d="M732 762 C830 798 915 858 947 930 L960 1000 L720 1000 Z" fill="url(#hm-under-r)" clip-path="url(#hm-clip-r)"/>
+
+  <!-- left person -->
+  <path d="M210 760 C210 650 300 563 415 563 C500 561 560 585 600 612 L600 736 C560 732 530 736 497 746 L495 850 A142.5 142.5 0 0 1 210 850 Z" fill="url(#hm-body-l)"/>
+  <path d="M497 745 C402 772 296 842 268 938 L268 1000 L505 1000 Z" fill="url(#hm-under-l)" clip-path="url(#hm-clip-l)"/>
+
+  <!-- ribbon joining the two -->
+  <path d="M400 563 C510 560 590 600 660 645 C760 708 905 772 947 930 C900 850 800 778 700 750 C640 734 560 730 497 745 L420 690 Z" fill="url(#hm-ribbon)"/>
 </svg>
