@@ -3,15 +3,15 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Guided tour · AI Automation Labs HRMS</title>
-<meta name="description" content="A 2-minute guided tour of AI Automation Labs HRMS, using a demo company.">
+<title>Guided tour · Humora</title>
+<meta name="description" content="A 2-minute guided tour of Humora, using a demo company.">
 <meta name="theme-color" content="#111827">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Montserrat:wght@800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="site.css">
 <link rel="stylesheet" href="pages.css">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23059669'/%3E%3Cpath d='M9 22v-1.5a4.5 4.5 0 0 1 4.5-4.5h5a4.5 4.5 0 0 1 4.5 4.5V22M16 13.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Z' fill='none' stroke='white' stroke-width='2.2' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="icon" type="image/svg+xml" href="assets/humora-mark.svg">
 </head>
 <body class="tour-page">
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
@@ -41,10 +41,7 @@
 <header class="topbar">
   <div class="container">
     <nav class="nav" aria-label="Main">
-      <a href="index.html" class="logo" aria-label="AI Automation Labs HRMS home">
-        <span class="logo-mark"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round"><path d="M5 20v-1a5 5 0 0 1 5-5h4a5 5 0 0 1 5 5v1"/><circle cx="12" cy="7" r="3.5"/></svg></span>
-        <span>AI Automation Labs HRMS<small>Core HR &amp; Payroll</small></span>
-      </a>
+      <a href="index.html" class="logo" aria-label="Humora home"><img class="logo-img" src="assets/humora-mark.svg" alt="" width="40" height="36"><span class="logo-sep" aria-hidden="true"></span><span class="logo-text"><span class="logo-word">HUMORA<sup>™</sup></span><small class="logo-tag">People. Operations. <b>Simplified.</b></small></span></a>
       <div class="right"><a class="hide-sm" href="index.html">Back to site</a><a class="btn btn-primary btn-sm" href="https://hrms-updated-25-09-2026.onrender.com/" style="color:#fff">Start free trial</a></div>
     </nav>
   </div>
@@ -52,7 +49,7 @@
 
 <div class="tour-app">
   <aside class="side" id="side-nav" aria-label="Demo app menu">
-    <div class="brandline"><span class="logo-mark"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round"><path d="M5 20v-1a5 5 0 0 1 5-5h4a5 5 0 0 1 5 5v1"/><circle cx="12" cy="7" r="3.5"/></svg></span>Acme Technologies</div>
+    <div class="brandline"><img class="brand-img" src="assets/humora-mark.svg" alt="" width="26" height="24">Acme Technologies</div>
     <a data-view="dash" class="on"><svg><use href="#i-grid"/></svg>Dashboard</a>
     <a data-view="att"><svg><use href="#i-clock"/></svg>Attendance</a>
     <a data-view="leave"><svg><use href="#i-cal"/></svg>Leave</a>
@@ -304,7 +301,7 @@ $('#role-sel').onchange=e=>{
 
 /* ---------- Guided tour ---------- */
 const STEPS=[
-  {center:true,icon:'i-users',title:'Welcome to the HRMS tour',text:'This 2-minute tour uses Acme Technologies, a demo company with 248 employees. You can click anything along the way.',next:'Start the tour',skip:'Explore on my own'},
+  {center:true,icon:'i-users',title:'Welcome to the Humora tour',text:'This 2-minute tour uses Acme Technologies, a demo company with 248 employees. You can click anything along the way.',next:'Start the tour',skip:'Explore on my own'},
   {view:'dash',target:()=>visible('#side-nav')?'#side-nav':'#mob-nav',title:'Everything in one menu',text:'Dashboard, attendance, leave, payroll and reports. Each person sees only the sections their role allows.'},
   {view:'dash',target:'#kpis',title:'Your company today',text:'Headcount, who is present, who is on leave and what needs approval, updated live.'},
   {view:'dash',target:'#clock-card',title:'Clock in with one tap',text:'Employees clock in and out from their phone or laptop. Try it: press Clock in.'},

@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 340" role="img" aria-label="Humora">
+  <defs>
+    <linearGradient id="hm-head-l" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#3FE0FF"/>
+      <stop offset="1" stop-color="#0A9BF5"/>
+    </linearGradient>
+    <linearGradient id="hm-head-r" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#C56BFF"/>
+      <stop offset="1" stop-color="#7A2EF6"/>
+    </linearGradient>
+    <linearGradient id="hm-leg-l" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1FD6FA"/>
+      <stop offset="1" stop-color="#0A8DEB"/>
+    </linearGradient>
+    <linearGradient id="hm-leg-r" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#8E44FF"/>
+      <stop offset="1" stop-color="#5A1FE0"/>
+    </linearGradient>
+    <linearGradient id="hm-ribbon" gradientUnits="userSpaceOnUse" x1="30" y1="0" x2="360" y2="0">
+      <stop offset="0" stop-color="#1ED8FB"/>
+      <stop offset=".45" stop-color="#3FA8FF"/>
+      <stop offset="1" stop-color="#7B2FF7"/>
+    </linearGradient>
+    <linearGradient id="hm-fold" gradientUnits="userSpaceOnUse" x1="250" y1="0" x2="370" y2="0">
+      <stop offset="0" stop-color="#3B0FA8" stop-opacity=".55"/>
+      <stop offset="1" stop-color="#3B0FA8" stop-opacity="0"/>
+    </linearGradient>
+    <clipPath id="hm-clip-r"><rect x="246" y="172" width="128" height="164" rx="64"/></clipPath>
+  </defs>
+  <!-- heads -->
+  <circle cx="74" cy="58" r="50" fill="url(#hm-head-l)"/>
+  <circle cx="300" cy="76" r="48" fill="url(#hm-head-r)"/>
+  <!-- legs -->
+  <rect x="8" y="150" width="128" height="186" rx="64" fill="url(#hm-leg-l)"/>
+  <rect x="246" y="172" width="128" height="164" rx="64" fill="url(#hm-leg-r)"/>
+  <!-- depth where the ribbon folds into the right leg -->
+  <path d="M246 236 C 290 238, 330 262, 374 300 L 374 336 L 246 336 Z" fill="url(#hm-fold)" clip-path="url(#hm-clip-r)"/>
+  <!-- ribbon joining the two people -->
+  <path d="M72 214 C 140 150, 214 168, 310 236" fill="none" stroke="url(#hm-ribbon)" stroke-width="128" stroke-linecap="round"/>
+  <!-- soft highlight along the ribbon -->
+  <path d="M60 176 C 130 120, 210 136, 292 190" fill="none" stroke="#FFFFFF" stroke-opacity=".18" stroke-width="16" stroke-linecap="round"/>
+</svg>
