@@ -1,0 +1,1026 @@
+<!doctype html>
+<html lang="en-IN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI Automation Labs HRMS · Core HR, Attendance, Leave & Indian Payroll</title>
+<meta name="description" content="India-first HRMS for growing companies: employee records, attendance, leave ledger and statutory payroll with EPF, ESI, PT and TDS, in one system.">
+<meta name="theme-color" content="#111827">
+<meta property="og:title" content="AI Automation Labs HRMS: your whole workforce at a glance">
+<meta property="og:description" content="Core HR, attendance, leave and Indian payroll in one system, for every person in your company.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23059669'/%3E%3Cpath d='M9 22v-1.5a4.5 4.5 0 0 1 4.5-4.5h5a4.5 4.5 0 0 1 4.5 4.5V22M16 13.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Z' fill='none' stroke='white' stroke-width='2.2' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --charcoal:#111827; --charcoal-2:#1B2437; --charcoal-3:#273248;
+  --brand:#059669; --brand-600:#047857; --brand-400:#10B981; --brand-300:#6EE7B7; --brand-50:#ECFDF5; --brand-100:#D1FAE5;
+  --text:#111827; --muted:#4B5563; --subtle:#6B7280;
+  --border:#E5E7EB; --panel:#FAFBFD; --white:#FFFFFF;
+  --amber:#D97706; --amber-50:#FFFBEB; --red:#DC2626; --red-50:#FEF2F2; --blue:#2563EB; --blue-50:#EFF6FF;
+  --radius:14px; --shadow:0 1px 2px rgba(17,24,39,.04),0 8px 24px rgba(17,24,39,.06);
+  --app:https://hrms-updated-25-09-2026.onrender.com;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:var(--text);background:var(--panel);line-height:1.6;font-size:16px;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+img,svg{display:block}
+.container{max-width:1240px;margin:0 auto;padding:0 16px}
+@media(min-width:640px){.container{padding:0 24px}}
+@media(min-width:1024px){.container{padding:0 32px}}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}
+.skip:focus{position:fixed;left:16px;top:16px;z-index:100;background:#fff;padding:8px 16px;border-radius:8px;width:auto;height:auto;clip:auto;font-weight:600}
+:focus-visible{outline:2px solid var(--brand-400);outline-offset:2px;border-radius:6px}
+
+/* Buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-weight:600;font-size:15px;border-radius:10px;padding:12px 20px;transition:background .15s,border-color .15s,transform .15s;white-space:nowrap;cursor:pointer;border:1px solid transparent}
+.btn-sm{padding:8px 14px;font-size:14px;border-radius:8px}
+.btn-primary{background:var(--brand);color:#fff}
+.btn-primary:hover{background:var(--brand-600)}
+.btn-ghost-dark{color:#fff;border-color:rgba(255,255,255,.22)}
+.btn-ghost-dark:hover{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.4)}
+.btn-outline{border-color:var(--border);background:#fff;color:var(--text)}
+.btn-outline:hover{border-color:#cbd5e1}
+.btn svg{width:16px;height:16px}
+
+/* Header */
+header{position:sticky;top:0;z-index:50;background:var(--charcoal);color:#fff;border-bottom:1px solid transparent;transition:border-color .2s,box-shadow .2s}
+header.scrolled{border-color:rgba(255,255,255,.08);box-shadow:0 4px 20px rgba(0,0,0,.25)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:64px;gap:16px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:-.01em}
+.logo-mark{width:32px;height:32px;border-radius:8px;background:var(--brand);display:grid;place-items:center;flex-shrink:0}
+.logo-mark svg{width:18px;height:18px}
+.logo small{display:block;font-size:11px;font-weight:500;color:#9CA3AF;letter-spacing:.02em;line-height:1.1}
+.logo span{line-height:1.15;font-size:15px}
+.nav-links{display:none;gap:28px;font-size:14px;color:#D1D5DB;font-weight:500}
+.nav-links a:hover{color:#fff}
+.nav-cta{display:none;gap:10px;align-items:center}
+.nav-cta .signin{font-size:14px;color:#D1D5DB;font-weight:500;padding:8px 10px}
+.nav-cta .signin:hover{color:#fff}
+.menu-btn{background:none;border:0;color:#fff;padding:8px;cursor:pointer}
+.menu-btn svg{width:24px;height:24px}
+.mobile-menu{display:none;border-top:1px solid rgba(255,255,255,.08);padding:12px 0 20px}
+.mobile-menu.open{display:block}
+.mobile-menu a:not(.btn){display:block;padding:10px 0;color:#D1D5DB;font-weight:500}
+.mobile-menu .btn{width:100%;margin-top:10px}
+@media(min-width:900px){.nav-links,.nav-cta{display:flex}.menu-btn,.mobile-menu,.mobile-menu.open{display:none}}
+
+/* Hero */
+.hero{background:var(--charcoal);color:#fff;position:relative;overflow:hidden;padding:64px 0 0}
+.hero::before{content:"";position:absolute;inset:0;background:radial-gradient(800px 400px at 50% -10%,rgba(16,185,129,.22),transparent 70%);pointer-events:none}
+.hero-inner{position:relative;text-align:center;max-width:860px;margin:0 auto}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:600;color:var(--brand-300);background:rgba(16,185,129,.1);border:1px solid rgba(16,185,129,.25);padding:6px 12px;border-radius:999px}
+.eyebrow .dot{width:6px;height:6px;border-radius:50%;background:var(--brand-400)}
+h1{font-size:clamp(36px,6vw,64px);line-height:1.06;font-weight:800;letter-spacing:-.035em;margin:22px 0 18px;text-wrap:balance}
+h1 em{font-style:normal;color:var(--brand-300)}
+.lead{font-size:clamp(17px,2vw,20px);color:#C7CDD8;max-width:680px;margin:0 auto;text-wrap:pretty}
+.hero-cta{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:32px}
+.checks{display:flex;gap:10px 22px;justify-content:center;flex-wrap:wrap;margin-top:22px;font-size:14px;color:#9CA3AF}
+.checks span{display:inline-flex;align-items:center;gap:6px}
+.checks svg{width:16px;height:16px;color:var(--brand-400)}
+.hero-shot{position:relative;margin:56px auto 0;max-width:1100px}
+.hero-shot .frame{border-radius:16px 16px 0 0;border-bottom:0}
+.float-card{position:absolute;background:#fff;color:var(--text);border-radius:12px;padding:12px 14px;box-shadow:0 12px 32px rgba(0,0,0,.25);font-size:13px;display:none;align-items:center;gap:10px;z-index:2}
+.float-card b{display:block;font-size:13px}
+.float-card small{color:var(--subtle);font-size:12px}
+.float-card .ic{width:32px;height:32px;border-radius:8px;display:grid;place-items:center;flex-shrink:0}
+.float-card .ic svg{width:16px;height:16px}
+.fc-1{left:-28px;top:330px}.fc-2{right:-28px;top:120px}
+@media(min-width:1180px){.float-card{display:flex}}
+
+/* App frame mock */
+.frame{background:#fff;border:1px solid var(--border);border-radius:16px;overflow:hidden;box-shadow:0 24px 60px rgba(0,0,0,.28);color:var(--text);text-align:left}
+.frame-bar{display:flex;align-items:center;gap:8px;padding:10px 14px;border-bottom:1px solid var(--border);background:#F9FAFB;font-size:12px;color:var(--subtle)}
+.frame-bar i{width:10px;height:10px;border-radius:50%;background:#E5E7EB;display:block}
+.frame-bar .url{margin-left:10px;background:#fff;border:1px solid var(--border);border-radius:6px;padding:2px 10px;flex:1;max-width:340px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.app{display:grid;grid-template-columns:1fr;min-height:420px}
+@media(min-width:760px){.app{grid-template-columns:200px 1fr}}
+.side{display:none;background:var(--charcoal);color:#9CA3AF;padding:16px 10px;font-size:13px}
+@media(min-width:760px){.side{display:block}}
+.side .brandline{display:flex;align-items:center;gap:8px;color:#fff;font-weight:700;padding:4px 8px 16px;font-size:13px}
+.side .brandline .logo-mark{width:24px;height:24px;border-radius:6px}
+.side .brandline .logo-mark svg{width:13px;height:13px}
+.side a{display:flex;align-items:center;gap:10px;padding:8px 10px;border-radius:8px;margin-bottom:2px}
+.side a.on{background:rgba(16,185,129,.14);color:#fff}
+.side a svg{width:15px;height:15px}
+.main{padding:18px;background:#F8FAFC;min-width:0}
+.main-head{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin-bottom:14px;flex-wrap:wrap}
+.main-head h4{font-size:17px;font-weight:700;letter-spacing:-.01em}
+.main-head p{font-size:12px;color:var(--subtle)}
+.pill{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:600;padding:3px 9px;border-radius:999px;white-space:nowrap}
+.p-green{background:var(--brand-50);color:var(--brand-600)}
+.p-amber{background:var(--amber-50);color:var(--amber)}
+.p-red{background:var(--red-50);color:var(--red)}
+.p-blue{background:var(--blue-50);color:var(--blue)}
+.p-gray{background:#F3F4F6;color:#4B5563}
+.kpis{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-bottom:12px}
+@media(min-width:900px){.kpis{grid-template-columns:repeat(4,1fr)}}
+.kpi{background:#fff;border:1px solid var(--border);border-radius:10px;padding:12px}
+.kpi small{font-size:11px;color:var(--subtle);display:block}
+.kpi b{font-size:22px;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+.kpi .delta{font-size:11px;color:var(--brand-600);font-weight:600}
+.grid2{display:grid;grid-template-columns:1fr;gap:12px}
+@media(min-width:900px){.grid2{grid-template-columns:1.4fr 1fr}}
+.card{background:#fff;border:1px solid var(--border);border-radius:10px;padding:14px;min-width:0}
+.card h5{font-size:13px;font-weight:700;margin-bottom:2px}
+.card .sub{font-size:11px;color:var(--subtle);margin-bottom:10px}
+.row{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:8px 0;border-top:1px solid #F3F4F6;font-size:12.5px}
+.row:first-of-type{border-top:0}
+.who{display:flex;align-items:center;gap:9px;min-width:0}
+.who div{min-width:0}
+.who b{display:block;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.who small{color:var(--subtle);font-size:11px;white-space:nowrap}
+.av{width:28px;height:28px;border-radius:50%;display:grid;place-items:center;font-size:11px;font-weight:700;flex-shrink:0}
+.mini-btns{display:flex;gap:6px}
+.mini-btns span{font-size:11px;font-weight:600;padding:4px 9px;border-radius:6px;border:1px solid var(--border)}
+.mini-btns .ok{background:var(--brand);color:#fff;border-color:var(--brand)}
+.bars{display:flex;align-items:flex-end;gap:6px;height:110px;padding-top:6px}
+.bars div{flex:1;background:var(--brand-100);border-radius:4px 4px 0 0;position:relative}
+.bars div.hi{background:var(--brand-400)}
+.bar-labels{display:flex;gap:6px;font-size:10px;color:var(--subtle);margin-top:6px}
+.bar-labels span{flex:1;text-align:center}
+.meter{height:6px;border-radius:999px;background:#F3F4F6;overflow:hidden;margin-top:6px}
+.meter i{display:block;height:100%;background:var(--brand-400);border-radius:999px}
+.table{width:100%;border-collapse:collapse;font-size:12px}
+.table th{text-align:left;font-weight:600;color:var(--subtle);font-size:11px;padding:8px 6px;border-bottom:1px solid var(--border);white-space:nowrap}
+.table td{padding:9px 6px;border-bottom:1px solid #F3F4F6;white-space:nowrap;font-variant-numeric:tabular-nums}
+.table td.num,.table th.num{text-align:right}
+.scroll-x{overflow-x:auto}
+.clock{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.clock .time{font-size:28px;font-weight:800;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+.cal{display:grid;grid-template-columns:repeat(7,1fr);gap:4px;font-size:11px;text-align:center}
+.cal span{padding:6px 0;border-radius:6px;background:#F9FAFB;color:#374151}
+.cal .h{background:none;color:var(--subtle);font-weight:600}
+.cal .P{background:var(--brand-50);color:var(--brand-600);font-weight:600}
+.cal .L{background:var(--blue-50);color:var(--blue);font-weight:600}
+.cal .A{background:var(--red-50);color:var(--red);font-weight:600}
+.cal .W{background:#F3F4F6;color:#9CA3AF}
+.cal .Ho{background:var(--amber-50);color:var(--amber);font-weight:600}
+.legend{display:flex;gap:12px;flex-wrap:wrap;font-size:11px;color:var(--subtle);margin-top:10px}
+.legend span{display:inline-flex;align-items:center;gap:5px}
+.legend i{width:8px;height:8px;border-radius:2px;display:block}
+
+/* Sections */
+section{padding:88px 0}
+.sec-head{max-width:720px;margin:0 auto 48px;text-align:center}
+.kicker{font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--brand)}
+h2{font-size:clamp(30px,4.2vw,46px);line-height:1.1;letter-spacing:-.03em;font-weight:800;margin:10px 0 14px;text-wrap:balance}
+.sec-head p{color:var(--muted);font-size:18px;text-wrap:pretty}
+.bg-white{background:#fff;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+
+/* Problem / compare */
+.compare{max-width:960px;margin:0 auto;background:#fff;border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow)}
+.cmp-head,.cmp-row{display:grid;grid-template-columns:1fr;gap:6px;padding:14px 20px}
+@media(min-width:720px){.cmp-head,.cmp-row{grid-template-columns:150px 1fr 1fr;gap:16px;align-items:center}}
+.cmp-head{background:#F9FAFB;border-bottom:1px solid var(--border);font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--subtle);display:none}
+@media(min-width:720px){.cmp-head{display:grid}}
+.cmp-head .w{color:var(--brand)}
+.cmp-row{border-top:1px solid #F3F4F6}
+.cmp-row:first-of-type{border-top:0}
+.cmp-row .k{font-weight:700;font-size:15px}
+.cmp-row .old,.cmp-row .new{display:flex;align-items:center;gap:10px;font-size:15px}
+.cmp-row .old{color:var(--subtle)}
+.cmp-row .old svg{color:#D1D5DB}
+.cmp-row .new svg{color:var(--brand)}
+.cmp-row svg{width:18px;height:18px;flex-shrink:0}
+
+/* Pillars */
+.pillars{display:grid;grid-template-columns:1fr;gap:20px}
+@media(min-width:860px){.pillars{grid-template-columns:1fr 1fr}}
+.pillar{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:28px;box-shadow:var(--shadow)}
+.pillar-top{display:flex;gap:14px;align-items:flex-start;margin-bottom:20px}
+.pillar-ic{width:44px;height:44px;border-radius:12px;background:var(--brand-50);color:var(--brand);display:grid;place-items:center;flex-shrink:0}
+.pillar-ic svg{width:22px;height:22px}
+.pillar h3{font-size:21px;letter-spacing:-.02em;font-weight:700}
+.pillar-top p{color:var(--muted);font-size:15px}
+.feat{display:flex;gap:12px;padding:14px 0;border-top:1px solid #F3F4F6}
+.feat svg{width:18px;height:18px;color:var(--brand);flex-shrink:0;margin-top:3px}
+.feat b{display:block;font-size:15px}
+.feat span{color:var(--muted);font-size:14.5px}
+
+/* Product tabs */
+.tabs{display:flex;gap:6px;justify-content:center;flex-wrap:wrap;margin-bottom:28px}
+.tab{font:inherit;font-size:14px;font-weight:600;padding:9px 16px;border-radius:999px;border:1px solid var(--border);background:#fff;color:var(--muted);cursor:pointer;transition:all .15s}
+.tab:hover{color:var(--text);border-color:#cbd5e1}
+.tab[aria-selected="true"]{background:var(--charcoal);color:#fff;border-color:var(--charcoal)}
+.panel{display:none}
+.panel.on{display:grid;grid-template-columns:1fr;gap:32px;align-items:center}
+@media(min-width:1000px){.panel.on{grid-template-columns:1fr 340px}}
+.panel .frame{box-shadow:0 20px 50px rgba(17,24,39,.12)}
+.panel-copy .kicker{font-size:12px}
+.panel-copy h3{font-size:26px;letter-spacing:-.02em;line-height:1.2;margin:8px 0 12px}
+.panel-copy p{color:var(--muted)}
+.panel-copy ul{list-style:none;margin-top:18px}
+.panel-copy li{display:flex;gap:10px;padding:6px 0;font-size:15px}
+.panel-copy li svg{width:18px;height:18px;color:var(--brand);flex-shrink:0;margin-top:3px}
+
+/* India */
+.india{display:grid;grid-template-columns:1fr;gap:16px}
+@media(min-width:640px){.india{grid-template-columns:1fr 1fr}}
+@media(min-width:1000px){.india{grid-template-columns:repeat(4,1fr)}}
+.tile{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:22px}
+.tile .ic{width:38px;height:38px;border-radius:10px;background:var(--brand-50);color:var(--brand);display:grid;place-items:center;margin-bottom:14px}
+.tile .ic svg{width:19px;height:19px}
+.tile h3{font-size:16px;font-weight:700;margin-bottom:6px;letter-spacing:-.01em}
+.tile p{font-size:14.5px;color:var(--muted)}
+
+/* Roles */
+.roles{display:grid;grid-template-columns:1fr;gap:16px}
+@media(min-width:640px){.roles{grid-template-columns:1fr 1fr}}
+@media(min-width:1000px){.roles{grid-template-columns:repeat(4,1fr)}}
+.role{background:var(--charcoal-2);color:#fff;border-radius:var(--radius);padding:24px;border:1px solid rgba(255,255,255,.06)}
+.role .tag{font-size:12px;font-weight:700;color:var(--brand-300);letter-spacing:.05em;text-transform:uppercase}
+.role h3{font-size:19px;margin:6px 0 12px;letter-spacing:-.01em}
+.role ul{list-style:none;font-size:14.5px;color:#C7CDD8}
+.role li{padding:5px 0;display:flex;gap:8px}
+.role li::before{content:"";width:5px;height:5px;border-radius:50%;background:var(--brand-400);margin-top:10px;flex-shrink:0}
+.dark{background:var(--charcoal);color:#fff}
+.dark .sec-head p{color:#C7CDD8}
+.dark .kicker{color:var(--brand-300)}
+
+/* FAQ */
+.faq-wrap{display:grid;grid-template-columns:1fr;gap:40px}
+@media(min-width:960px){.faq-wrap{grid-template-columns:340px 1fr}}
+.faq-wrap .sec-head{text-align:left;margin:0}
+.faq details{background:#fff;border:1px solid var(--border);border-radius:12px;margin-bottom:10px;overflow:hidden}
+.faq summary{list-style:none;cursor:pointer;padding:18px 20px;font-weight:600;display:flex;justify-content:space-between;gap:16px;align-items:center}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary svg{width:18px;height:18px;color:var(--subtle);transition:transform .2s;flex-shrink:0}
+.faq details[open] summary svg{transform:rotate(45deg)}
+.faq details p{padding:0 20px 18px;color:var(--muted);font-size:15px}
+
+/* Pricing */
+.billing{display:flex;justify-content:center;margin-bottom:12px}
+.billing-toggle{display:inline-flex;background:#fff;border:1px solid var(--border);border-radius:999px;padding:4px;gap:4px}
+.billing-toggle button{font:inherit;font-size:14px;font-weight:600;border:0;background:none;color:var(--muted);padding:8px 18px;border-radius:999px;cursor:pointer;display:inline-flex;gap:8px;align-items:center}
+.billing-toggle button[aria-pressed="true"]{background:var(--charcoal);color:#fff}
+.billing-toggle .save{font-size:11px;font-weight:700;background:var(--brand-100);color:var(--brand-600);padding:2px 7px;border-radius:999px}
+.trial-note{text-align:center;color:var(--subtle);font-size:14px;margin-bottom:32px}
+.plans{display:grid;grid-template-columns:1fr;gap:16px;align-items:stretch}
+@media(min-width:640px){.plans{grid-template-columns:1fr 1fr}}
+@media(min-width:1100px){.plans{grid-template-columns:repeat(4,1fr)}}
+.plan{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:24px;display:flex;flex-direction:column;gap:16px;position:relative}
+.plan.pop{border:2px solid var(--brand);box-shadow:0 12px 32px rgba(5,150,105,.12)}
+.plan .badge{position:absolute;top:-12px;left:24px;background:var(--brand);color:#fff;font-size:12px;font-weight:700;padding:3px 10px;border-radius:999px}
+.plan .for{font-size:13px;color:var(--subtle);font-weight:500}
+.plan h3{font-size:20px;letter-spacing:-.02em;margin-top:2px}
+.price{display:flex;align-items:baseline;gap:4px}
+.price b{font-size:34px;letter-spacing:-.03em;font-weight:800;font-variant-numeric:tabular-nums}
+.price span{color:var(--subtle);font-size:14px}
+.billed{font-size:13px;color:var(--subtle);margin-top:-12px;min-height:20px}
+.limits{display:flex;flex-direction:column;gap:6px;padding:14px 0;border-top:1px solid #F3F4F6;border-bottom:1px solid #F3F4F6;font-size:14px;font-weight:600}
+.limits span{display:flex;gap:8px;align-items:center}
+.limits svg{width:16px;height:16px;color:var(--brand)}
+.plan ul{list-style:none;display:flex;flex-direction:column;gap:8px;font-size:14px;color:var(--muted);flex:1}
+.plan li{display:flex;gap:8px}
+.plan li svg{width:16px;height:16px;color:var(--brand);flex-shrink:0;margin-top:3px}
+.plan .btn{width:100%}
+.compare-plans{margin-top:28px;background:#fff;border:1px solid var(--border);border-radius:var(--radius);overflow:hidden}
+.compare-plans summary{list-style:none;cursor:pointer;padding:18px 22px;font-weight:700;display:flex;justify-content:space-between;align-items:center}
+.compare-plans summary::-webkit-details-marker{display:none}
+.compare-plans summary svg{width:18px;height:18px;color:var(--subtle);transition:transform .2s}
+.compare-plans[open] summary svg{transform:rotate(45deg)}
+.compare-plans .scroll-x{padding:0 22px 22px}
+.ctable{width:100%;border-collapse:collapse;font-size:14px;min-width:640px}
+.ctable th,.ctable td{padding:11px 10px;border-bottom:1px solid #F3F4F6;text-align:center}
+.ctable th:first-child,.ctable td:first-child{text-align:left}
+.ctable thead th{font-size:13px;color:var(--subtle);font-weight:700}
+.ctable .grp td{background:#F9FAFB;font-weight:700;font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:var(--subtle)}
+.ctable svg{width:16px;height:16px;color:var(--brand);display:inline-block}
+.ctable .no{color:#D1D5DB}
+
+/* Contact */
+.contact-wrap{display:grid;grid-template-columns:1fr;gap:40px;align-items:start}
+@media(min-width:960px){.contact-wrap{grid-template-columns:1fr 1.1fr}}
+.contact-wrap .sec-head{text-align:left;margin:0}
+.contact-points{list-style:none;display:flex;flex-direction:column;gap:14px;margin-top:24px}
+.contact-points li{display:flex;gap:12px;font-size:15px;color:var(--muted)}
+.contact-points li svg{width:20px;height:20px;color:var(--brand);flex-shrink:0;margin-top:2px}
+.contact-points b{color:var(--text);display:block}
+.form{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:24px;display:grid;grid-template-columns:1fr;gap:14px;box-shadow:var(--shadow)}
+@media(min-width:600px){.form{grid-template-columns:1fr 1fr}}
+.form .full{grid-column:1/-1}
+.form label{display:flex;flex-direction:column;gap:6px;font-size:13px;font-weight:600}
+.form input,.form select,.form textarea{font:inherit;font-size:15px;padding:10px 12px;border:1px solid var(--border);border-radius:8px;background:#fff;color:var(--text);width:100%}
+.form input:focus,.form select:focus,.form textarea:focus{outline:2px solid var(--brand-400);outline-offset:0;border-color:transparent}
+.form textarea{min-height:96px;resize:vertical}
+.form .btn{width:100%}
+.form-msg{font-size:14px;color:var(--brand-600);font-weight:600}
+
+/* CTA */
+.cta{background:var(--charcoal);color:#fff;border-radius:20px;padding:56px 24px;text-align:center;position:relative;overflow:hidden}
+.cta::before{content:"";position:absolute;inset:0;background:radial-gradient(600px 300px at 50% 0,rgba(16,185,129,.22),transparent 70%)}
+.cta>*{position:relative}
+.cta h2{color:#fff}
+.cta p{color:#C7CDD8;max-width:560px;margin:0 auto;font-size:18px}
+
+/* Footer */
+footer{background:var(--charcoal);color:#9CA3AF;padding:56px 0 28px;font-size:14px}
+.foot{display:grid;grid-template-columns:1fr;gap:32px}
+@media(min-width:760px){.foot{grid-template-columns:2fr 1fr 1fr}}
+.foot p{max-width:360px;margin-top:14px}
+.foot h4{color:#fff;font-size:14px;margin-bottom:12px}
+.foot a{display:block;padding:4px 0}
+.foot a:hover{color:#fff}
+.foot-bottom{border-top:1px solid rgba(255,255,255,.08);margin-top:40px;padding-top:20px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;font-size:13px}
+.logo.light span{color:#fff}
+
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<a href="#main" class="sr-only skip">Skip to content</a>
+
+<!-- Icon sprite -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-user" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></symbol>
+    <symbol id="i-users" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></symbol>
+    <symbol id="i-check-c" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></symbol>
+    <symbol id="i-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="m15 9-6 6M9 9l6 6"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></symbol>
+    <symbol id="i-cal" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></symbol>
+    <symbol id="i-rupee" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h12M6 8h12M6 13l8.5 8M6 13h3a5 5 0 0 0 0-10"/></symbol>
+    <symbol id="i-building" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M9 22v-4h6v4M8 6h.01M16 6h.01M12 6h.01M12 10h.01M12 14h.01M16 10h.01M16 14h.01M8 10h.01M8 14h.01"/></symbol>
+    <symbol id="i-grid" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></symbol>
+    <symbol id="i-lock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></symbol>
+    <symbol id="i-file" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/></symbol>
+    <symbol id="i-chart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></symbol>
+    <symbol id="i-plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></symbol>
+    <symbol id="i-alert" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></symbol>
+    <symbol id="i-layers" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 2 10 5-10 5L2 7l10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></symbol>
+  </defs>
+</svg>
+
+<header id="top">
+  <div class="container">
+    <nav class="nav" aria-label="Main">
+      <a href="#top" class="logo" aria-label="AI Automation Labs HRMS home">
+        <span class="logo-mark"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round"><path d="M5 20v-1a5 5 0 0 1 5-5h4a5 5 0 0 1 5 5v1"/><circle cx="12" cy="7" r="3.5"/></svg></span>
+        <span>AI Automation Labs HRMS<small>Core HR &amp; Payroll</small></span>
+      </a>
+      <div class="nav-links">
+        <a href="#features">Features</a>
+        <a href="#product">Product tour</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="nav-cta">
+        <a class="signin" href="https://hrms-updated-25-09-2026.onrender.com/login">Sign in</a>
+        <a class="btn btn-primary btn-sm" href="https://hrms-updated-25-09-2026.onrender.com/login">Start free trial</a>
+      </div>
+      <button class="menu-btn" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </nav>
+    <div class="mobile-menu" id="mobile-menu">
+      <a href="#features">Features</a>
+      <a href="#product">Product tour</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contact">Contact</a>
+      <a href="https://hrms-updated-25-09-2026.onrender.com/login">Sign in</a>
+      <a class="btn btn-primary" href="https://hrms-updated-25-09-2026.onrender.com/login">Start free trial</a>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- HERO -->
+<section class="hero" style="padding-bottom:0">
+  <div class="container">
+    <div class="hero-inner">
+      <span class="eyebrow"><span class="dot"></span>HR and payroll software for Indian companies</span>
+      <h1>Your whole workforce, <em>at a glance.</em></h1>
+      <p class="lead">Employee records, attendance, leave and statutory payroll, run from one system by HR, managers and every employee.</p>
+      <div class="hero-cta">
+        <a class="btn btn-primary" href="https://hrms-updated-25-09-2026.onrender.com/login">Start free trial <svg><use href="#i-arrow"/></svg></a>
+        <a class="btn btn-ghost-dark" href="#contact">Book a demo</a>
+      </div>
+      <div class="checks">
+        <span><svg><use href="#i-check"/></svg>14-day full trial</span>
+        <span><svg><use href="#i-check"/></svg>No card required</span>
+        <span><svg><use href="#i-check"/></svg>Cancel anytime</span>
+      </div>
+    </div>
+
+    <div class="hero-shot">
+      <div class="float-card fc-1"><span class="ic p-green"><svg><use href="#i-pin"/></svg></span><div><b>Priya clocked in · 09:12</b><small>Office location verified</small></div></div>
+      <div class="float-card fc-2"><span class="ic p-amber"><svg><use href="#i-alert"/></svg></span><div><b>4 approvals waiting</b><small>Leave and regularization</small></div></div>
+      <div class="frame">
+        <div class="frame-bar"><i></i><i></i><i></i><span class="url">hrms · Dashboard</span></div>
+        <div class="app">
+          <aside class="side" aria-hidden="true">
+            <div class="brandline"><span class="logo-mark"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round"><path d="M5 20v-1a5 5 0 0 1 5-5h4a5 5 0 0 1 5 5v1"/><circle cx="12" cy="7" r="3.5"/></svg></span>HRMS</div>
+            <a class="on"><svg><use href="#i-grid"/></svg>Dashboard</a>
+            <a><svg><use href="#i-users"/></svg>Employees</a>
+            <a><svg><use href="#i-clock"/></svg>Attendance</a>
+            <a><svg><use href="#i-cal"/></svg>Leave</a>
+            <a><svg><use href="#i-rupee"/></svg>Payroll</a>
+            <a><svg><use href="#i-building"/></svg>Organization</a>
+          </aside>
+          <div class="main">
+            <div class="main-head">
+              <div><h4>Welcome back, Anita</h4><p>Live tenant overview · Thursday, 05 November 2026</p></div>
+              <span class="pill p-green">● Shift status: Checked in</span>
+            </div>
+            <div class="kpis">
+              <div class="kpi"><small>Total active employees</small><b>248</b><div class="delta">+6 this month</div></div>
+              <div class="kpi"><small>Present today</small><b>231</b><div class="delta">93% attendance</div></div>
+              <div class="kpi"><small>On leave</small><b>11</b><div class="delta" style="color:var(--blue)">3 half-days</div></div>
+              <div class="kpi"><small>Pending approvals</small><b>4</b><div class="delta" style="color:var(--amber)">Leave queue</div></div>
+            </div>
+            <div class="grid2">
+              <div class="card">
+                <h5>Pending leave approvals</h5>
+                <div class="sub">Leaves and attendance regularizations awaiting action</div>
+                <div class="row"><div class="who"><span class="av p-green">PS</span><div><b>Priya Sharma</b><small>Casual leave · 2 days</small></div></div><div class="mini-btns"><span class="ok">Approve</span><span>Reject</span></div></div>
+                <div class="row"><div class="who"><span class="av p-blue">RK</span><div><b>Rahul Kumar</b><small>Sick leave · 1 day</small></div></div><div class="mini-btns"><span class="ok">Approve</span><span>Reject</span></div></div>
+                <div class="row"><div class="who"><span class="av p-amber">SM</span><div><b>Sneha Menon</b><small>Regularization · 03 Nov</small></div></div><div class="mini-btns"><span class="ok">Approve</span><span>Reject</span></div></div>
+              </div>
+              <div class="card">
+                <h5>Statutory compliance</h5>
+                <div class="sub">October payroll · EPF + ESI + PT + TDS</div>
+                <div class="row"><span>EPF (employer + employee)</span><b>₹4,82,160</b></div>
+                <div class="row"><span>ESI</span><b>₹38,415</b></div>
+                <div class="row"><span>Professional tax</span><b>₹49,600</b></div>
+                <div class="row"><span>TDS</span><b>₹6,12,900</b></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROBLEM -->
+<section>
+  <div class="container">
+    <div class="sec-head">
+      <span class="kicker">The problem</span>
+      <h2>Most companies run HR on five different tools.</h2>
+      <p>Attendance sits in a biometric export, leave in email threads, salaries in Excel and compliance with the CA. Nobody sees the full picture, and payroll week means chasing numbers.</p>
+    </div>
+    <div class="compare">
+      <div class="cmp-head"><span></span><span>Today</span><span class="w">With HRMS</span></div>
+      <div class="cmp-row"><span class="k">Employees</span><span class="old"><svg><use href="#i-x"/></svg>Spreadsheets and paper files</span><span class="new"><svg><use href="#i-check-c"/></svg>One employee master</span></div>
+      <div class="cmp-row"><span class="k">Attendance</span><span class="old"><svg><use href="#i-x"/></svg>Registers and device exports</span><span class="new"><svg><use href="#i-check-c"/></svg>Clock in and out from any browser</span></div>
+      <div class="cmp-row"><span class="k">Leave</span><span class="old"><svg><use href="#i-x"/></svg>Emails and WhatsApp messages</span><span class="new"><svg><use href="#i-check-c"/></svg>Leave ledger with one-click approvals</span></div>
+      <div class="cmp-row"><span class="k">Payroll</span><span class="old"><svg><use href="#i-x"/></svg>Hand-built salary sheets</span><span class="new"><svg><use href="#i-check-c"/></svg>Monthly payroll from attendance</span></div>
+      <div class="cmp-row"><span class="k">Compliance</span><span class="old"><svg><use href="#i-x"/></svg>Calculated again every month</span><span class="new"><svg><use href="#i-check-c"/></svg>EPF, ESI, PT and TDS computed for you</span></div>
+      <div class="cmp-row"><span class="k">Access</span><span class="old"><svg><use href="#i-x"/></svg>Shared logins, no trail</span><span class="new"><svg><use href="#i-check-c"/></svg>Role-based access for everyone</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section id="features" class="bg-white">
+  <div class="container">
+    <div class="sec-head">
+      <span class="kicker">What HRMS does</span>
+      <h2>Four jobs. One system.</h2>
+      <p>HRMS covers your people records, their time, their leave and their pay, without asking your team to learn four products.</p>
+    </div>
+    <div class="pillars">
+      <article class="pillar">
+        <div class="pillar-top"><span class="pillar-ic"><svg><use href="#i-users"/></svg></span><div><h3>Core HR</h3><p>One source of truth for every person and every team.</p></div></div>
+        <div class="feat"><svg><use href="#i-check"/></svg><div><b>Employee directory</b><span>Profiles, departments, designations and reporting lines in one place.</span></div></div>
+        <div class="feat"><svg><use href="#i-check"/></svg><div><b>Organization master</b><span>Set up entities, departments, locations and holidays once.</span></div></div>
+        <div class="feat"><svg><use href="#i-check"/></svg><div><b>Multi-tenant by design</b><span>Every company works in its own separate workspace, under its own tenant.</span></div></div>
+      </article>
+      <article class="pillar">
+        <div class="pillar-top"><span class="pillar-ic"><svg><use href="#i-clock"/></svg></span><div><h3>Attendance</h3><p>Know who is in, who is late and who is out, as it happens.</p></div></div>
+        <div class="feat"><svg><use href="#i-check"/></svg><div><b>Clock in and clock out</b><span>Employees punch in from their phone or laptop; check-in time is recorded.</span></div></div>
+        <div class="feat"><svg><use href="#i-check"/></svg><div><b>Worked hours and late marks</b><span>Hours, present days, late marks and LOP are tallied every month.</span></div></div>
+        <div class="feat"><svg><use href="#i-check"/></svg><div><b>Regularizations</b><span>Missed a punch? Request a correction, and the manager approves it.</span></div></div>
+      </article>
+      <article class="pillar">
+        <div class="pillar-top"><span class="pillar-ic"><svg><use href="#i-cal"/></svg></span><div><h3>Leave</h3><p>Balances people can trust, because every day is on the ledger.</p></div></div>
+        <div class="feat"><svg><use href="#i-check"/></svg><div><b>Leave ledger</b><span>Every credit and debit is recorded, so balances are always live and auditable.</span></div></div>
+        <div class="feat"><svg><use href="#i-check"/></svg><div><b>Apply and approve</b><span>Employees apply in seconds; managers approve or reject from the leave queue.</span></div></div>
+        <div class="feat"><svg><use href="#i-check"/></svg><div><b>Holiday calendar</b><span>National and company holidays, with the next one shown on every dashboard.</span></div></div>
+      </article>
+      <article class="pillar">
+        <div class="pillar-top"><span class="pillar-ic"><svg><use href="#i-rupee"/></svg></span><div><h3>Payroll</h3><p>Indian statutory payroll, run from the attendance you already have.</p></div></div>
+        <div class="feat"><svg><use href="#i-check"/></svg><div><b>Salary structures</b><span>Define CTC templates and assign the active structure to each employee.</span></div></div>
+        <div class="feat"><svg><use href="#i-check"/></svg><div><b>Run monthly payroll</b><span>Present days and LOP flow straight in, so a pay run takes minutes, not days.</span></div></div>
+        <div class="feat"><svg><use href="#i-check"/></svg><div><b>Statutory compliance</b><span>EPF, ESI, Professional Tax and TDS are worked out for every employee.</span></div></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCT TOUR -->
+<section id="product">
+  <div class="container">
+    <div class="sec-head">
+      <span class="kicker">The product</span>
+      <h2>Everything happening in your company. At a glance.</h2>
+      <p>One clean workspace for HR, managers and employees. Each person sees the screens their role needs.</p>
+    </div>
+
+    <div class="tabs" role="tablist" aria-label="Product screens">
+      <button class="tab" role="tab" aria-selected="true" aria-controls="p-dash" id="t-dash">Dashboard</button>
+      <button class="tab" role="tab" aria-selected="false" aria-controls="p-att" id="t-att" tabindex="-1">Attendance</button>
+      <button class="tab" role="tab" aria-selected="false" aria-controls="p-leave" id="t-leave" tabindex="-1">Leave</button>
+      <button class="tab" role="tab" aria-selected="false" aria-controls="p-pay" id="t-pay" tabindex="-1">Payroll</button>
+      <button class="tab" role="tab" aria-selected="false" aria-controls="p-rep" id="t-rep" tabindex="-1">Reports</button>
+    </div>
+
+    <!-- Dashboard -->
+    <div class="panel on" id="p-dash" role="tabpanel" aria-labelledby="t-dash">
+      <div class="frame">
+        <div class="frame-bar"><i></i><i></i><i></i><span class="url">hrms · Dashboard</span></div>
+        <div class="main">
+          <div class="main-head"><div><h4>Monthly snapshot</h4><p>November 2026</p></div><span class="pill p-amber">Next holiday: Guru Nanak Jayanti</span></div>
+          <div class="kpis">
+            <div class="kpi"><small>Present days</small><b>4</b></div>
+            <div class="kpi"><small>Worked hours</small><b>36.5</b></div>
+            <div class="kpi"><small>Late marks</small><b>1</b></div>
+            <div class="kpi"><small>LOP / absent</small><b>0</b></div>
+          </div>
+          <div class="card">
+            <h5>Headcount present, last 7 working days</h5>
+            <div class="sub">Out of 248 active employees</div>
+            <div class="bars" aria-hidden="true"><div style="height:82%"></div><div style="height:88%"></div><div style="height:79%"></div><div style="height:91%"></div><div style="height:86%"></div><div style="height:90%"></div><div class="hi" style="height:93%"></div></div>
+            <div class="bar-labels"><span>Wed</span><span>Thu</span><span>Fri</span><span>Mon</span><span>Tue</span><span>Wed</span><span>Today</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="panel-copy">
+        <span class="kicker">Dashboard</span>
+        <h3>Today, on one screen</h3>
+        <p>Headcount, attendance, approvals waiting and compliance totals. The morning check-in is already done when you open it.</p>
+        <ul>
+          <li><svg><use href="#i-check"/></svg>Live tenant overview for HR and admins</li>
+          <li><svg><use href="#i-check"/></svg>Personal monthly snapshot for employees</li>
+          <li><svg><use href="#i-check"/></svg>Approvals waiting, right on the home screen</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Attendance -->
+    <div class="panel" id="p-att" role="tabpanel" aria-labelledby="t-att" hidden>
+      <div class="frame">
+        <div class="frame-bar"><i></i><i></i><i></i><span class="url">hrms · Attendance</span></div>
+        <div class="main">
+          <div class="card" style="margin-bottom:12px">
+            <div class="clock">
+              <div><div class="sub" style="margin:0">Today's attendance</div><div class="time">09:12 AM</div><span class="pill p-green">Checked in · Bengaluru office</span></div>
+              <div class="mini-btns"><span class="ok" style="padding:8px 14px;font-size:12px">Clock out</span></div>
+            </div>
+          </div>
+          <div class="card">
+            <h5>November 2026</h5>
+            <div class="sub">Your attendance calendar</div>
+            <div class="cal" aria-hidden="true">
+              <span class="h">M</span><span class="h">T</span><span class="h">W</span><span class="h">T</span><span class="h">F</span><span class="h">S</span><span class="h">S</span>
+              <span class="W"></span><span class="W"></span><span class="W"></span><span class="W"></span><span class="W"></span><span class="W">1</span><span class="W">2</span>
+              <span class="P">3</span><span class="P">4</span><span class="P">5</span><span>6</span><span>7</span><span class="W">8</span><span class="W">9</span>
+              <span>10</span><span>11</span><span>12</span><span>13</span><span>14</span><span class="W">15</span><span class="W">16</span>
+              <span>17</span><span>18</span><span>19</span><span>20</span><span>21</span><span class="W">22</span><span class="W">23</span>
+              <span class="Ho">24</span><span>25</span><span>26</span><span>27</span><span>28</span><span class="W">29</span><span class="W">30</span>
+            </div>
+            <div class="legend"><span><i style="background:var(--brand-400)"></i>Present</span><span><i style="background:var(--blue)"></i>Leave</span><span><i style="background:var(--red)"></i>Absent</span><span><i style="background:var(--amber)"></i>Holiday</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="panel-copy">
+        <span class="kicker">Attendance</span>
+        <h3>One tap to clock in</h3>
+        <p>Employees clock in and out from the browser. Worked hours, late marks and absences add up on their own and flow into payroll.</p>
+        <ul>
+          <li><svg><use href="#i-check"/></svg>Clock in and out from phone or laptop</li>
+          <li><svg><use href="#i-check"/></svg>Late marks and worked hours, tracked daily</li>
+          <li><svg><use href="#i-check"/></svg>Regularization requests with approval</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Leave -->
+    <div class="panel" id="p-leave" role="tabpanel" aria-labelledby="t-leave" hidden>
+      <div class="frame">
+        <div class="frame-bar"><i></i><i></i><i></i><span class="url">hrms · Leave</span></div>
+        <div class="main">
+          <div class="main-head"><div><h4>Leave balances</h4><p>Ledger-derived live credits</p></div><span class="pill p-gray">+ Apply leave</span></div>
+          <div class="kpis">
+            <div class="kpi"><small>Casual leave</small><b>6</b><div class="meter"><i style="width:50%"></i></div></div>
+            <div class="kpi"><small>Sick leave</small><b>8</b><div class="meter"><i style="width:67%"></i></div></div>
+            <div class="kpi"><small>Earned leave</small><b>14.5</b><div class="meter"><i style="width:80%"></i></div></div>
+            <div class="kpi"><small>Comp off</small><b>1</b><div class="meter"><i style="width:25%"></i></div></div>
+          </div>
+          <div class="card scroll-x">
+            <table class="table">
+              <thead><tr><th>Type</th><th>Dates</th><th class="num">Days</th><th>Status</th></tr></thead>
+              <tbody>
+                <tr><td>Casual leave</td><td>12–13 Nov</td><td class="num">2</td><td><span class="pill p-amber">Pending</span></td></tr>
+                <tr><td>Sick leave</td><td>21 Oct</td><td class="num">1</td><td><span class="pill p-green">Approved</span></td></tr>
+                <tr><td>Earned leave</td><td>02–06 Sep</td><td class="num">5</td><td><span class="pill p-green">Approved</span></td></tr>
+                <tr><td>Casual leave</td><td>14 Aug</td><td class="num">1</td><td><span class="pill p-red">Rejected</span></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div class="panel-copy">
+        <span class="kicker">Leave</span>
+        <h3>Balances nobody argues about</h3>
+        <p>Every credit, debit and lapse is a line on the leave ledger, so the balance an employee sees is the balance payroll uses.</p>
+        <ul>
+          <li><svg><use href="#i-check"/></svg>Apply in seconds, see status live</li>
+          <li><svg><use href="#i-check"/></svg>Managers approve from one leave queue</li>
+          <li><svg><use href="#i-check"/></svg>Holiday calendar shared across the company</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Payroll -->
+    <div class="panel" id="p-pay" role="tabpanel" aria-labelledby="t-pay" hidden>
+      <div class="frame">
+        <div class="frame-bar"><i></i><i></i><i></i><span class="url">hrms · Payroll</span></div>
+        <div class="main">
+          <div class="main-head"><div><h4>Payroll · October 2026</h4><p>Active salary structure: Standard Tech CTC</p></div><span class="pill p-green">Run monthly payroll</span></div>
+          <div class="card scroll-x">
+            <table class="table">
+              <thead><tr><th>Employee</th><th class="num">Gross</th><th class="num">EPF</th><th class="num">ESI</th><th class="num">PT</th><th class="num">TDS</th><th class="num">Net pay</th></tr></thead>
+              <tbody>
+                <tr><td>Priya Sharma</td><td class="num">₹85,000</td><td class="num">₹1,800</td><td class="num">—</td><td class="num">₹200</td><td class="num">₹6,250</td><td class="num"><b>₹76,750</b></td></tr>
+                <tr><td>Rahul Kumar</td><td class="num">₹62,500</td><td class="num">₹1,800</td><td class="num">—</td><td class="num">₹200</td><td class="num">₹2,900</td><td class="num"><b>₹57,600</b></td></tr>
+                <tr><td>Sneha Menon</td><td class="num">₹1,20,000</td><td class="num">₹1,800</td><td class="num">—</td><td class="num">₹200</td><td class="num">₹13,400</td><td class="num"><b>₹1,04,600</b></td></tr>
+                <tr><td>Arjun Patel</td><td class="num">₹19,800</td><td class="num">₹1,188</td><td class="num">₹149</td><td class="num">₹150</td><td class="num">—</td><td class="num"><b>₹18,313</b></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div class="panel-copy">
+        <span class="kicker">Payroll</span>
+        <h3>Statutory payroll, from attendance</h3>
+        <p>Assign a CTC structure, and present days and LOP come straight in from attendance. EPF, ESI, PT and TDS are worked out for each employee.</p>
+        <ul>
+          <li><svg><use href="#i-check"/></svg>CTC salary structures per employee</li>
+          <li><svg><use href="#i-check"/></svg>Attendance-linked LOP deductions</li>
+          <li><svg><use href="#i-check"/></svg>EPF, ESI, PT and TDS in every pay run</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Reports -->
+    <div class="panel" id="p-rep" role="tabpanel" aria-labelledby="t-rep" hidden>
+      <div class="frame">
+        <div class="frame-bar"><i></i><i></i><i></i><span class="url">hrms · Reports</span></div>
+        <div class="main">
+          <div class="main-head"><div><h4>Reports</h4><p>October 2026 · All departments</p></div><div class="mini-btns"><span>PDF</span><span>Excel</span><span>CSV</span></div></div>
+          <div class="kpis">
+            <div class="kpi"><small>Payroll cost</small><b>₹1.42 Cr</b><div class="delta">+2.1% vs Sep</div></div>
+            <div class="kpi"><small>Avg. attendance</small><b>92.4%</b><div class="delta">+0.8 pts</div></div>
+            <div class="kpi"><small>Leave days taken</small><b>186</b><div class="delta" style="color:var(--blue)">Festive month</div></div>
+            <div class="kpi"><small>Attrition</small><b>1.2%</b><div class="delta">3 exits</div></div>
+          </div>
+          <div class="card scroll-x">
+            <table class="table">
+              <thead><tr><th>Department</th><th class="num">Headcount</th><th class="num">Attendance</th><th class="num">Leave days</th><th class="num">Payroll cost</th></tr></thead>
+              <tbody>
+                <tr><td>Engineering</td><td class="num">112</td><td class="num">93.8%</td><td class="num">74</td><td class="num">₹78,40,000</td></tr>
+                <tr><td>Sales</td><td class="num">46</td><td class="num">89.1%</td><td class="num">41</td><td class="num">₹24,15,000</td></tr>
+                <tr><td>Operations</td><td class="num">58</td><td class="num">92.6%</td><td class="num">48</td><td class="num">₹26,10,000</td></tr>
+                <tr><td>Finance &amp; HR</td><td class="num">32</td><td class="num">94.0%</td><td class="num">23</td><td class="num">₹13,35,000</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div class="panel-copy">
+        <span class="kicker">Reports</span>
+        <h3>Month end, in one click</h3>
+        <p>Headcount, attendance, leave and payroll cost by department, ready for the founder, the finance team and your CA.</p>
+        <ul>
+          <li><svg><use href="#i-check"/></svg>Attendance, leave and payroll reports</li>
+          <li><svg><use href="#i-check"/></svg>Department and location breakdowns</li>
+          <li><svg><use href="#i-check"/></svg>Export to PDF, Excel or CSV</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INDIA -->
+<section id="india" class="bg-white">
+  <div class="container">
+    <div class="sec-head">
+      <span class="kicker">Built for India</span>
+      <h2>The details your CA and your auditor care about.</h2>
+      <p>HRMS is made for how companies in India actually pay and manage people: statutory rules, rupees and Indian holidays included, not bolted on.</p>
+    </div>
+    <div class="india">
+      <div class="tile"><span class="ic"><svg><use href="#i-shield"/></svg></span><h3>EPF and ESI</h3><p>Provident fund and state insurance contributions, worked out for each employee on every pay run.</p></div>
+      <div class="tile"><span class="ic"><svg><use href="#i-building"/></svg></span><h3>Professional Tax</h3><p>PT deducted along with the rest of payroll, with no separate sheet to maintain.</p></div>
+      <div class="tile"><span class="ic"><svg><use href="#i-file"/></svg></span><h3>TDS on salary</h3><p>Monthly tax deducted at source is calculated as part of the payroll run.</p></div>
+      <div class="tile"><span class="ic"><svg><use href="#i-rupee"/></svg></span><h3>Rupees, the Indian way</h3><p>Every amount reads ₹1,23,456, the way finance and employees expect to see it.</p></div>
+      <div class="tile"><span class="ic"><svg><use href="#i-cal"/></svg></span><h3>Indian holidays</h3><p>National and festival holidays like Gandhi Jayanti, ready in the company calendar.</p></div>
+      <div class="tile"><span class="ic"><svg><use href="#i-layers"/></svg></span><h3>Leave ledger</h3><p>Balances are derived from a ledger of credits and debits, so every day can be traced.</p></div>
+      <div class="tile"><span class="ic"><svg><use href="#i-lock"/></svg></span><h3>Role-based access</h3><p>Company admin, HR admin, manager and employee each see only what they need.</p></div>
+      <div class="tile"><span class="ic"><svg><use href="#i-grid"/></svg></span><h3>Multi-tenant</h3><p>Each company signs in to its own tenant, with its data kept apart from everyone else's.</p></div>
+      <div class="tile"><span class="ic"><svg><use href="#i-clock"/></svg></span><h3>Indian Standard Time</h3><p>Clock-ins, late marks, leave and payroll cut-offs all run on IST, wherever the server is.</p></div>
+      <div class="tile"><span class="ic"><svg><use href="#i-lock"/></svg></span><h3>Protected employee IDs</h3><p>PAN, Aadhaar and bank details are protected. Screens show only the last 4 digits.</p></div>
+      <div class="tile"><span class="ic"><svg><use href="#i-chart"/></svg></span><h3>Full audit log</h3><p>Every important change records who made it and when. On Professional and up.</p></div>
+      <div class="tile"><span class="ic"><svg><use href="#i-check-c"/></svg></span><h3>Locked pay runs</h3><p>Once payroll is finalised, it is locked. Corrections go through an arrears run, on record.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ROLES -->
+<section class="dark">
+  <div class="container">
+    <div class="sec-head">
+      <span class="kicker">For every person</span>
+      <h2>Everyone signs in as themselves.</h2>
+      <p>Each role gets a workspace built around its own job, from the founder to the newest joiner.</p>
+    </div>
+    <div class="roles">
+      <div class="role"><span class="tag">Company admin</span><h3>Owns the setup</h3><ul><li>Organization master and tenant settings</li><li>Salary structures and policies</li><li>Full view across the company</li></ul></div>
+      <div class="role"><span class="tag">HR admin</span><h3>Runs the people ops</h3><ul><li>Employee records and onboarding</li><li>Run monthly payroll</li><li>Statutory compliance totals</li></ul></div>
+      <div class="role"><span class="tag">Manager</span><h3>Leads the team</h3><ul><li>Approve or reject leave</li><li>Approve attendance regularizations</li><li>See who is in today</li></ul></div>
+      <div class="role"><span class="tag">Employee</span><h3>Self-service</h3><ul><li>Clock in and clock out</li><li>Apply for leave, see balances</li><li>Monthly attendance snapshot</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING (edit prices in the PLANS object in the script at the bottom) -->
+<section id="pricing" class="bg-white">
+  <div class="container">
+    <div class="sec-head">
+      <span class="kicker">Pricing</span>
+      <h2>Simple plans, sized to your team.</h2>
+      <p>Pick the plan that fits your headcount. Try the full product free before you choose.</p>
+    </div>
+    <div class="billing">
+      <div class="billing-toggle" role="group" aria-label="Billing period">
+        <button type="button" id="bill-monthly" aria-pressed="true">Monthly</button>
+        <button type="button" id="bill-yearly" aria-pressed="false">Yearly <span class="save">2 months free</span></button>
+      </div>
+    </div>
+    <p class="trial-note">Every plan starts with a 14-day trial of the full product. No card required.</p>
+
+    <div class="plans">
+      <article class="plan">
+        <div><div class="for">For small teams</div><h3>Starter</h3></div>
+        <div class="price"><b data-plan="starter">₹2,999</b><span>/month</span></div>
+        <div class="billed" data-billed>Billed monthly</div>
+        <div class="limits"><span><svg><use href="#i-users"/></svg>Up to 25 employees</span><span><svg><use href="#i-user"/></svg>2 admin accounts</span></div>
+        <ul>
+          <li><svg><use href="#i-check"/></svg>Employee directory and org master</li>
+          <li><svg><use href="#i-check"/></svg>Attendance and leave ledger</li>
+          <li><svg><use href="#i-check"/></svg>Payroll with EPF, ESI, PT and TDS</li>
+          <li><svg><use href="#i-check"/></svg>Core reports</li>
+        </ul>
+        <a class="btn btn-outline" href="https://hrms-updated-25-09-2026.onrender.com/login">Start free trial</a>
+      </article>
+      <article class="plan pop">
+        <span class="badge">Most popular</span>
+        <div><div class="for">For growing companies</div><h3>Professional</h3></div>
+        <div class="price"><b data-plan="pro">₹6,999</b><span>/month</span></div>
+        <div class="billed" data-billed>Billed monthly</div>
+        <div class="limits"><span><svg><use href="#i-users"/></svg>Up to 100 employees</span><span><svg><use href="#i-user"/></svg>5 admin accounts</span></div>
+        <ul>
+          <li><svg><use href="#i-check"/></svg>Everything in Starter</li>
+          <li><svg><use href="#i-check"/></svg>Manager approvals and regularizations</li>
+          <li><svg><use href="#i-check"/></svg>Advanced reports and full audit log</li>
+          <li><svg><use href="#i-check"/></svg>Multiple salary structures</li>
+        </ul>
+        <a class="btn btn-primary" href="https://hrms-updated-25-09-2026.onrender.com/login">Start free trial</a>
+      </article>
+      <article class="plan">
+        <div><div class="for">For larger companies</div><h3>Business</h3></div>
+        <div class="price"><b data-plan="business">₹14,999</b><span>/month</span></div>
+        <div class="billed" data-billed>Billed monthly</div>
+        <div class="limits"><span><svg><use href="#i-users"/></svg>Up to 300 employees</span><span><svg><use href="#i-user"/></svg>15 admin accounts</span></div>
+        <ul>
+          <li><svg><use href="#i-check"/></svg>Everything in Professional</li>
+          <li><svg><use href="#i-check"/></svg>Multiple locations and shifts</li>
+          <li><svg><use href="#i-check"/></svg>Integrations</li>
+          <li><svg><use href="#i-check"/></svg>Priority support</li>
+        </ul>
+        <a class="btn btn-outline" href="https://hrms-updated-25-09-2026.onrender.com/login">Start free trial</a>
+      </article>
+      <article class="plan">
+        <div><div class="for">For groups and enterprises</div><h3>Enterprise</h3></div>
+        <div class="price"><b>Custom</b></div>
+        <div class="billed">Priced for your organisation</div>
+        <div class="limits"><span><svg><use href="#i-users"/></svg>300+ employees</span><span><svg><use href="#i-building"/></svg>Multiple entities</span></div>
+        <ul>
+          <li><svg><use href="#i-check"/></svg>Multi-entity, multi-tenant setup</li>
+          <li><svg><use href="#i-check"/></svg>Central dashboard and reporting</li>
+          <li><svg><use href="#i-check"/></svg>Custom onboarding</li>
+          <li><svg><use href="#i-check"/></svg>Dedicated support</li>
+        </ul>
+        <a class="btn btn-outline" href="#contact">Talk to us</a>
+      </article>
+    </div>
+
+    <details class="compare-plans">
+      <summary>Compare plans and add-ons<svg><use href="#i-plus"/></svg></summary>
+      <div class="scroll-x">
+        <table class="ctable">
+          <thead><tr><th>Feature</th><th>Starter</th><th>Professional</th><th>Business</th><th>Enterprise</th></tr></thead>
+          <tbody>
+            <tr class="grp"><td colspan="5">Limits</td></tr>
+            <tr><td>Employees</td><td>25</td><td>100</td><td>300</td><td>300+</td></tr>
+            <tr><td>Admin accounts</td><td>2</td><td>5</td><td>15</td><td>To suit</td></tr>
+            <tr><td>Entities / tenants</td><td>1</td><td>1</td><td>1</td><td>Multiple</td></tr>
+            <tr class="grp"><td colspan="5">Core HR and time</td></tr>
+            <tr><td>Employee directory and org master</td><td><svg><use href="#i-check"/></svg></td><td><svg><use href="#i-check"/></svg></td><td><svg><use href="#i-check"/></svg></td><td><svg><use href="#i-check"/></svg></td></tr>
+            <tr><td>Clock in / clock out</td><td><svg><use href="#i-check"/></svg></td><td><svg><use href="#i-check"/></svg></td><td><svg><use href="#i-check"/></svg></td><td><svg><use href="#i-check"/></svg></td></tr>
+            <tr><td>Leave ledger and holiday calendar</td><td><svg><use href="#i-check"/></svg></td><td><svg><use href="#i-check"/></svg></td><td><svg><use href="#i-check"/></svg></td><td><svg><use href="#i-check"/></svg></td></tr>
+            <tr><td>Manager approvals and regularizations</td><td class="no">—</td><td><svg><use href="#i-check"/></svg></td><td><svg><use href="#i-check"/></svg></td><td><svg><use href="#i-check"/></svg></td></tr>
+            <tr><td>Multiple locations and shifts</td><td class="no">—</td><td class="no">—</td><td><svg><use href="#i-check"/></svg></td><td><svg><use href="#i-check"/></svg></td></tr>
+            <tr class="grp"><td colspan="5">Payroll and reports</td></tr>
+            <tr><td>Payroll with EPF, ESI, PT and TDS</td><td><svg><use href="#i-check"/></svg></td><td><svg><use href="#i-check"/></svg></td><td><svg><use href="#i-check"/></svg></td><td><svg><use href="#i-check"/></svg></td></tr>
+            <tr><td>Multiple salary structures</td><td class="no">—</td><td><svg><use href="#i-check"/></svg></td><td><svg><use href="#i-check"/></svg></td><td><svg><use href="#i-check"/></svg></td></tr>
+            <tr><td>Advanced reports and audit log</td><td class="no">—</td><td><svg><use href="#i-check"/></svg></td><td><svg><use href="#i-check"/></svg></td><td><svg><use href="#i-check"/></svg></td></tr>
+            <tr><td>Central multi-entity reporting</td><td class="no">—</td><td class="no">—</td><td class="no">—</td><td><svg><use href="#i-check"/></svg></td></tr>
+            <tr class="grp"><td colspan="5">Add-ons</td></tr>
+            <tr><td>Data migration</td><td>On request</td><td>On request</td><td>On request</td><td>Included</td></tr>
+            <tr><td>Assisted onboarding</td><td>Paid add-on</td><td>Paid add-on</td><td>Paid add-on</td><td>Included</td></tr>
+            <tr><td>Support</td><td>Email</td><td>Email and chat</td><td>Priority</td><td>Dedicated</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </details>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="container">
+    <div class="faq-wrap">
+      <div class="sec-head">
+        <span class="kicker">FAQ</span>
+        <h2>Questions HR teams and founders ask</h2>
+        <p>Something we haven't covered? <a href="#contact" style="color:var(--brand);font-weight:600">Book a demo</a> and ask us directly.</p>
+      </div>
+      <div class="faq">
+        <details><summary>Is HRMS suitable for small companies?<svg><use href="#i-plus"/></svg></summary><p>Yes. Starter is built for small teams of up to 25 employees. You get the employee directory, attendance, leave and statutory payroll from day one.</p></details>
+        <details><summary>Can I manage multiple companies or entities?<svg><use href="#i-plus"/></svg></summary><p>Yes, on the Enterprise plan. HRMS is multi-tenant, so each entity gets its own workspace, with central reporting across them. Talk to us and we will plan it with you.</p></details>
+        <details><summary>Can employees have separate accounts?<svg><use href="#i-plus"/></svg></summary><p>Yes. Every person signs in with their own work email. Company admin, HR admin, manager and employee each see only the screens their role needs.</p></details>
+        <details><summary>What is a tenant slug?<svg><use href="#i-plus"/></svg></summary><p>Every company gets its own workspace, identified by a short tenant slug. You enter it with your work email and password when you sign in, so you land in your own company's data.</p></details>
+        <details><summary>Does it handle Indian statutory payroll?<svg><use href="#i-plus"/></svg></summary><p>Yes. EPF, ESI, Professional Tax and TDS are calculated as part of every monthly pay run.</p></details>
+        <details><summary>Can I migrate my existing employee data?<svg><use href="#i-plus"/></svg></summary><p>Yes, as a paid add-on. We can bring in employee records, salary structures, opening leave balances and past payroll. It is priced on request, depending on how much data you have and where it lives.</p></details>
+        <details><summary>Does it work on mobile?<svg><use href="#i-plus"/></svg></summary><p>HRMS runs in the browser on phones, tablets and computers. Employees clock in and apply for leave from their phones every day. There is no separate native app yet.</p></details>
+        <details><summary>Do you provide onboarding?<svg><use href="#i-plus"/></svg></summary><p>Every account gets a setup guide and demo accounts to explore. If you want us to set up your departments, salary structures and leave policies for you, assisted onboarding is available as a paid add-on.</p></details>
+        <details><summary>Can I cancel?<svg><use href="#i-plus"/></svg></summary><p>Yes, anytime. There is no lock-in. If you pay yearly, your plan stays active until the end of the period you paid for.</p></details>
+        <details><summary>What happens when my trial ends?<svg><use href="#i-plus"/></svg></summary><p>Your data is not deleted. Your employees, attendance and leave records stay safe while you pick a plan, and full access comes back as soon as you subscribe.</p></details>
+        <details><summary>Is employee data secure?<svg><use href="#i-plus"/></svg></summary><p>Each company's data stays in its own tenant. Access is by role, sensitive IDs show only the last 4 digits, finalised payroll is locked, and every important change is in the audit log.</p></details>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section style="padding-top:0">
+  <div class="container">
+    <div class="cta">
+      <span class="kicker">Try it now</span>
+      <h2>Try HRMS on your own company.</h2>
+      <p>Look around the demo company first as an admin, a manager or an employee, then set up yours. Your 14-day trial starts only when you create your real company.</p>
+      <div class="hero-cta">
+        <a class="btn btn-primary" href="https://hrms-updated-25-09-2026.onrender.com/login">Start free trial <svg><use href="#i-arrow"/></svg></a>
+        <a class="btn btn-ghost-dark" href="#contact">Book a demo</a>
+      </div>
+      <div class="checks">
+        <span><svg><use href="#i-check"/></svg>14-day full trial</span>
+        <span><svg><use href="#i-check"/></svg>No card required</span>
+        <span><svg><use href="#i-check"/></svg>Cancel anytime</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT / BOOK A DEMO (set your email in CONTACT_EMAIL in the script at the bottom) -->
+<section id="contact" class="bg-white">
+  <div class="container">
+    <div class="contact-wrap">
+      <div class="sec-head">
+        <span class="kicker">Contact</span>
+        <h2>Book a demo.</h2>
+        <p>Tell us about your team and we will walk you through HRMS on a call, using your own departments, salary structures and leave policies.</p>
+        <ul class="contact-points">
+          <li><svg><use href="#i-clock"/></svg><div><b>30-minute walkthrough</b>Attendance, leave and a full payroll run, start to finish.</div></li>
+          <li><svg><use href="#i-rupee"/></svg><div><b>Pricing for your headcount</b>We will recommend the right plan and any add-ons.</div></li>
+          <li><svg><use href="#i-file"/></svg><div><b>Migration plan</b>How we would bring in your existing employee and payroll data.</div></li>
+        </ul>
+      </div>
+      <form class="form" id="demo-form" novalidate>
+        <label>Your name<input id="f-name" name="name" required autocomplete="name" placeholder="Anita Rao"></label>
+        <label>Work email<input id="f-email" name="email" type="email" required autocomplete="email" placeholder="anita@company.in"></label>
+        <label>Company<input id="f-company" name="company" required autocomplete="organization" placeholder="Company name"></label>
+        <label>Phone<input id="f-phone" name="phone" type="tel" autocomplete="tel" placeholder="+91 98765 43210"></label>
+        <label class="full">Number of employees
+          <select id="f-size" name="size">
+            <option>1–25</option><option selected>26–100</option><option>101–300</option><option>300+</option>
+          </select>
+        </label>
+        <label class="full">What would you like to see?<textarea id="f-msg" name="message" placeholder="For example: payroll with PT for Karnataka, leave policies, multiple offices"></textarea></label>
+        <div class="full"><button class="btn btn-primary" type="submit">Request a demo <svg><use href="#i-arrow"/></svg></button></div>
+        <p class="full form-msg" id="form-msg" role="status" hidden></p>
+      </form>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="container">
+    <div class="foot">
+      <div>
+        <a href="#top" class="logo light">
+          <span class="logo-mark"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round"><path d="M5 20v-1a5 5 0 0 1 5-5h4a5 5 0 0 1 5 5v1"/><circle cx="12" cy="7" r="3.5"/></svg></span>
+          <span>AI Automation Labs HRMS<small>Core HR &amp; Payroll</small></span>
+        </a>
+        <p>India-first HR and payroll software. Core HR, attendance, leave and statutory payroll in one place.</p>
+      </div>
+      <div>
+        <h4>Product</h4>
+        <a href="#features">Features</a>
+        <a href="#product">Product tour</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#faq">FAQ</a>
+      </div>
+      <div>
+        <h4>Get started</h4>
+        <a href="https://hrms-updated-25-09-2026.onrender.com/login">Start free trial</a>
+        <a href="#contact">Book a demo</a>
+        <a href="https://hrms-updated-25-09-2026.onrender.com/login">Sign in</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 AI Automation Labs. All rights reserved.</span>
+      <span>Made for companies in India · Amounts in Indian rupees</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Header shadow on scroll
+const header=document.querySelector('header');
+const onScroll=()=>header.classList.toggle('scrolled',window.scrollY>8);
+window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+
+// Mobile menu
+const menuBtn=document.querySelector('.menu-btn'),menu=document.getElementById('mobile-menu');
+menuBtn.addEventListener('click',()=>{const o=menu.classList.toggle('open');menuBtn.setAttribute('aria-expanded',o)});
+menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{menu.classList.remove('open');menuBtn.setAttribute('aria-expanded','false')}));
+
+// Product tabs
+const tabs=[...document.querySelectorAll('[role="tab"]')];
+function select(t){
+  tabs.forEach(x=>{const on=x===t;x.setAttribute('aria-selected',on);x.tabIndex=on?0:-1;
+    const p=document.getElementById(x.getAttribute('aria-controls'));p.hidden=!on;p.classList.toggle('on',on)});
+}
+tabs.forEach((t,i)=>{
+  t.addEventListener('click',()=>select(t));
+  t.addEventListener('keydown',e=>{
+    let n=null;if(e.key==='ArrowRight')n=tabs[(i+1)%tabs.length];if(e.key==='ArrowLeft')n=tabs[(i-1+tabs.length)%tabs.length];
+    if(n){e.preventDefault();select(n);n.focus()}
+  });
+});
+
+// Pricing: monthly prices in rupees. Yearly = 10 months (2 months free).
+const PLANS={starter:2999,pro:6999,business:14999};
+const inr=n=>'₹'+Math.round(n).toLocaleString('en-IN');
+const bm=document.getElementById('bill-monthly'),by=document.getElementById('bill-yearly');
+function setBilling(yearly){
+  bm.setAttribute('aria-pressed',!yearly);by.setAttribute('aria-pressed',yearly);
+  document.querySelectorAll('[data-plan]').forEach(el=>{const m=PLANS[el.dataset.plan];el.textContent=inr(yearly?m*10/12:m)});
+  document.querySelectorAll('[data-billed]').forEach((el,i)=>{const m=Object.values(PLANS)[i];el.textContent=yearly?`Billed yearly at ${inr(m*10)}`:'Billed monthly'});
+}
+bm.addEventListener('click',()=>setBilling(false));by.addEventListener('click',()=>setBilling(true));
+
+// Book a demo form: opens the visitor's email app addressed to you.
+const CONTACT_EMAIL='your-email@example.com'; // TODO: replace with your sales email
+document.getElementById('demo-form').addEventListener('submit',e=>{
+  e.preventDefault();
+  const f=e.target,msg=document.getElementById('form-msg');
+  if(!f.checkValidity()){msg.hidden=false;msg.style.color='var(--red)';msg.textContent='Please fill in your name, a valid work email and your company.';return}
+  const v=n=>f.elements[n].value.trim();
+  const body=`Name: ${v('name')}\nEmail: ${v('email')}\nCompany: ${v('company')}\nPhone: ${v('phone')}\nEmployees: ${v('size')}\n\n${v('message')}`;
+  location.href=`mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent('HRMS demo request: '+v('company'))}&body=${encodeURIComponent(body)}`;
+  msg.hidden=false;msg.style.color='';msg.textContent=`Your email app should open with the request filled in. If it doesn't, write to ${CONTACT_EMAIL}.`;
+});
+
+// Wake the Render-hosted app early so the demo loads faster when clicked
+try{fetch('https://hrms-updated-25-09-2026.onrender.com/',{mode:'no-cors'}).catch(()=>{})}catch(e){}
+</script>
+</body>
+</html>
