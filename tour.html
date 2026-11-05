@@ -1,0 +1,391 @@
+<!doctype html>
+<html lang="en-IN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Guided tour · AI Automation Labs HRMS</title>
+<meta name="description" content="A 2-minute guided tour of AI Automation Labs HRMS, using a demo company.">
+<meta name="theme-color" content="#111827">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site.css">
+<link rel="stylesheet" href="pages.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23059669'/%3E%3Cpath d='M9 22v-1.5a4.5 4.5 0 0 1 4.5-4.5h5a4.5 4.5 0 0 1 4.5 4.5V22M16 13.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Z' fill='none' stroke='white' stroke-width='2.2' stroke-linecap='round'/%3E%3C/svg%3E">
+</head>
+<body class="tour-page">
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-user" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></symbol>
+    <symbol id="i-users" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></symbol>
+    <symbol id="i-check-c" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></symbol>
+    <symbol id="i-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="m15 9-6 6M9 9l6 6"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></symbol>
+    <symbol id="i-cal" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></symbol>
+    <symbol id="i-rupee" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h12M6 8h12M6 13l8.5 8M6 13h3a5 5 0 0 0 0-10"/></symbol>
+    <symbol id="i-building" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M9 22v-4h6v4M8 6h.01M16 6h.01M12 6h.01M12 10h.01M12 14h.01M16 10h.01M16 14h.01M8 10h.01M8 14h.01"/></symbol>
+    <symbol id="i-grid" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></symbol>
+    <symbol id="i-lock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></symbol>
+    <symbol id="i-file" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/></symbol>
+    <symbol id="i-chart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></symbol>
+    <symbol id="i-plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></symbol>
+    <symbol id="i-alert" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></symbol>
+    <symbol id="i-layers" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 2 10 5-10 5L2 7l10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></symbol>
+  </defs>
+</svg>
+
+<header class="topbar">
+  <div class="container">
+    <nav class="nav" aria-label="Main">
+      <a href="index.html" class="logo" aria-label="AI Automation Labs HRMS home">
+        <span class="logo-mark"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round"><path d="M5 20v-1a5 5 0 0 1 5-5h4a5 5 0 0 1 5 5v1"/><circle cx="12" cy="7" r="3.5"/></svg></span>
+        <span>AI Automation Labs HRMS<small>Core HR &amp; Payroll</small></span>
+      </a>
+      <div class="right"><a class="hide-sm" href="index.html">Back to site</a><a class="btn btn-primary btn-sm" href="signup.html" style="color:#fff">Start free trial</a></div>
+    </nav>
+  </div>
+</header>
+
+<div class="tour-app">
+  <aside class="side" id="side-nav" aria-label="Demo app menu">
+    <div class="brandline"><span class="logo-mark"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round"><path d="M5 20v-1a5 5 0 0 1 5-5h4a5 5 0 0 1 5 5v1"/><circle cx="12" cy="7" r="3.5"/></svg></span>Acme Technologies</div>
+    <a data-view="dash" class="on"><svg><use href="#i-grid"/></svg>Dashboard</a>
+    <a data-view="att"><svg><use href="#i-clock"/></svg>Attendance</a>
+    <a data-view="leave"><svg><use href="#i-cal"/></svg>Leave</a>
+    <a data-view="pay" data-admin><svg><use href="#i-rupee"/></svg>Payroll</a>
+    <a data-view="rep" data-admin><svg><use href="#i-chart"/></svg>Reports</a>
+  </aside>
+
+  <main class="main" id="main">
+    <div class="demo-banner"><span>You're exploring <b>Acme Technologies</b>, a demo company. Nothing you do here is saved.</span><a href="signup.html">Start your own free trial</a></div>
+    <div class="mob-nav" id="mob-nav" role="navigation" aria-label="Demo app menu">
+      <button data-view="dash" aria-current="page">Dashboard</button>
+      <button data-view="att">Attendance</button>
+      <button data-view="leave">Leave</button>
+      <button data-view="pay" data-admin>Payroll</button>
+      <button data-view="rep" data-admin>Reports</button>
+    </div>
+
+    <!-- DASHBOARD -->
+    <section class="view" data-v="dash">
+      <div class="main-head">
+        <div><h4 id="greet">Welcome back, Anita</h4><p>Live tenant overview · <span class="today"></span></p></div>
+        <label class="role-switch" id="role">View as
+          <select id="role-sel"><option>HR Admin</option><option>Company Admin</option><option>Manager</option><option>Employee</option></select>
+        </label>
+      </div>
+      <div class="kpis" id="kpis">
+        <div class="kpi"><small>Total active employees</small><b>248</b><div class="delta">+6 this month</div></div>
+        <div class="kpi"><small>Present today</small><b id="present">230</b><div class="delta" id="present-pct">93% attendance</div></div>
+        <div class="kpi"><small>On leave</small><b>11</b><div class="delta" style="color:var(--blue)">3 half-days</div></div>
+        <div class="kpi"><small>Pending approvals</small><b id="pending">3</b><div class="delta" style="color:var(--amber)">Leave queue</div></div>
+      </div>
+      <div class="grid2">
+        <div class="card" id="approvals">
+          <h5>Pending leave approvals</h5>
+          <div class="sub">Leaves and attendance regularizations awaiting action</div>
+          <div id="appr-list"></div>
+        </div>
+        <div class="card" id="clock-card">
+          <h5>Today's attendance</h5>
+          <div class="sub">Shift 09:30 – 18:30 · Bengaluru office</div>
+          <div class="clock">
+            <div><div class="time" id="clock-time">--:--</div><span class="pill p-gray" id="clock-status">Not checked in</span></div>
+            <button class="btn-clock" id="clock-btn" type="button">Clock in</button>
+          </div>
+          <div class="row" style="margin-top:12px"><span>Next holiday</span><b>Guru Nanak Jayanti</b></div>
+          <div class="row"><span>Leave balance</span><b>28.5 days</b></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ATTENDANCE -->
+    <section class="view" data-v="att" hidden>
+      <div class="main-head"><div><h4>Attendance</h4><p>Your monthly snapshot</p></div><span class="pill p-green">Regularize a day</span></div>
+      <div class="kpis">
+        <div class="kpi"><small>Present days</small><b>3</b></div>
+        <div class="kpi"><small>Worked hours</small><b>27.5</b></div>
+        <div class="kpi"><small>Late marks</small><b>1</b></div>
+        <div class="kpi"><small>LOP / absent</small><b>0</b></div>
+      </div>
+      <div class="card" id="att-cal">
+        <h5 id="cal-title">This month</h5>
+        <div class="sub">Tap a day to request a correction</div>
+        <div class="cal" id="cal"></div>
+        <div class="legend"><span><i style="background:var(--brand-400)"></i>Present</span><span><i style="background:var(--blue)"></i>Leave</span><span><i style="background:var(--red)"></i>Absent</span><span><i style="background:var(--amber)"></i>Holiday</span><span><i style="background:#E5E7EB"></i>Weekly off</span></div>
+      </div>
+    </section>
+
+    <!-- LEAVE -->
+    <section class="view" data-v="leave" hidden>
+      <div class="main-head"><div><h4>Leave</h4><p>Ledger-derived live credits</p></div><button class="btn btn-primary btn-sm" type="button" id="apply-leave">+ Apply leave</button></div>
+      <div class="kpis" id="leave-bal">
+        <div class="kpi"><small>Casual leave</small><b id="cl-bal">6</b><div class="meter"><i id="cl-m" style="width:50%"></i></div></div>
+        <div class="kpi"><small>Sick leave</small><b>8</b><div class="meter"><i style="width:67%"></i></div></div>
+        <div class="kpi"><small>Earned leave</small><b>14.5</b><div class="meter"><i style="width:80%"></i></div></div>
+        <div class="kpi"><small>Comp off</small><b>1</b><div class="meter"><i style="width:25%"></i></div></div>
+      </div>
+      <div class="card scroll-x" id="leave-hist">
+        <h5>Your requests</h5><div class="sub">Every request and its status</div>
+        <table class="table">
+          <thead><tr><th>Type</th><th>Dates</th><th class="num">Days</th><th>Status</th></tr></thead>
+          <tbody id="leave-rows">
+            <tr><td>Sick leave</td><td>21 Oct</td><td class="num">1</td><td><span class="pill p-green">Approved</span></td></tr>
+            <tr><td>Earned leave</td><td>02–06 Sep</td><td class="num">5</td><td><span class="pill p-green">Approved</span></td></tr>
+            <tr><td>Casual leave</td><td>14 Aug</td><td class="num">1</td><td><span class="pill p-red">Rejected</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- PAYROLL -->
+    <section class="view" data-v="pay" hidden>
+      <div class="main-head"><div><h4 id="pay-title">Payroll</h4><p>Active salary structure: Standard Tech CTC</p></div><button class="btn btn-primary btn-sm" type="button" id="run-pay">Run monthly payroll</button></div>
+      <div class="kpis">
+        <div class="kpi"><small>Employees in run</small><b>248</b></div>
+        <div class="kpi"><small>Gross pay</small><b>₹1.42 Cr</b></div>
+        <div class="kpi"><small>Statutory deductions</small><b>₹11.8 L</b></div>
+        <div class="kpi"><small>Status</small><b id="pay-status" style="font-size:16px"><span class="pill p-amber">Draft</span></b></div>
+      </div>
+      <div class="card scroll-x" id="pay-table">
+        <table class="table">
+          <thead><tr><th>Employee</th><th class="num">Gross</th><th class="num">EPF</th><th class="num">ESI</th><th class="num">PT</th><th class="num">TDS</th><th class="num">Net pay</th></tr></thead>
+          <tbody>
+            <tr><td>Priya Sharma</td><td class="num">₹85,000</td><td class="num">₹1,800</td><td class="num">—</td><td class="num">₹200</td><td class="num">₹6,250</td><td class="num"><b>₹76,750</b></td></tr>
+            <tr><td>Rahul Kumar</td><td class="num">₹62,500</td><td class="num">₹1,800</td><td class="num">—</td><td class="num">₹200</td><td class="num">₹2,900</td><td class="num"><b>₹57,600</b></td></tr>
+            <tr><td>Sneha Menon</td><td class="num">₹1,20,000</td><td class="num">₹1,800</td><td class="num">—</td><td class="num">₹200</td><td class="num">₹13,400</td><td class="num"><b>₹1,04,600</b></td></tr>
+            <tr><td>Arjun Patel</td><td class="num">₹19,800</td><td class="num">₹1,188</td><td class="num">₹149</td><td class="num">₹150</td><td class="num">—</td><td class="num"><b>₹18,313</b></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- REPORTS -->
+    <section class="view" data-v="rep" hidden>
+      <div class="main-head"><div><h4>Reports</h4><p>Last month · All departments</p></div><div class="mini-btns" id="rep-export"><button class="exp" type="button">PDF</button><button class="exp" type="button">Excel</button><button class="exp" type="button">CSV</button></div></div>
+      <div class="kpis">
+        <div class="kpi"><small>Payroll cost</small><b>₹1.42 Cr</b><div class="delta">+2.1% vs last month</div></div>
+        <div class="kpi"><small>Avg. attendance</small><b>92.4%</b><div class="delta">+0.8 pts</div></div>
+        <div class="kpi"><small>Leave days taken</small><b>186</b></div>
+        <div class="kpi"><small>Attrition</small><b>1.2%</b><div class="delta">3 exits</div></div>
+      </div>
+      <div class="card scroll-x">
+        <table class="table">
+          <thead><tr><th>Department</th><th class="num">Headcount</th><th class="num">Attendance</th><th class="num">Leave days</th><th class="num">Payroll cost</th></tr></thead>
+          <tbody>
+            <tr><td>Engineering</td><td class="num">112</td><td class="num">93.8%</td><td class="num">74</td><td class="num">₹78,40,000</td></tr>
+            <tr><td>Sales</td><td class="num">46</td><td class="num">89.1%</td><td class="num">41</td><td class="num">₹24,15,000</td></tr>
+            <tr><td>Operations</td><td class="num">58</td><td class="num">92.6%</td><td class="num">48</td><td class="num">₹26,10,000</td></tr>
+            <tr><td>Finance &amp; HR</td><td class="num">32</td><td class="num">94.0%</td><td class="num">23</td><td class="num">₹13,35,000</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+</div>
+
+<button class="btn btn-primary restart" id="restart" type="button" hidden>Restart the tour</button>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<!-- Tour layers -->
+<div class="tour-spot none" id="spot" hidden></div>
+<div class="tour-pop" id="pop" role="dialog" aria-modal="false" aria-labelledby="pop-title" hidden>
+  <div id="pop-ic"></div>
+  <span class="count" id="pop-count"></span>
+  <h3 id="pop-title"></h3>
+  <p id="pop-text"></p>
+  <div class="bar"><i id="pop-bar"></i></div>
+  <div class="acts">
+    <button class="skip" type="button" id="pop-skip">Skip tour</button>
+    <div class="nb">
+      <button class="btn btn-outline btn-sm" type="button" id="pop-back">Back</button>
+      <button class="btn btn-primary btn-sm" type="button" id="pop-next">Next</button>
+    </div>
+  </div>
+</div>
+
+<script>
+/* ---------- Demo app ---------- */
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+const tour={on:false,i:0};
+const toastEl=$('#toast');let tt;
+function toast(m){toastEl.textContent=m;toastEl.classList.add('show');clearTimeout(tt);tt=setTimeout(()=>toastEl.classList.remove('show'),2400)}
+const now=new Date();
+const fmtDate=d=>d.toLocaleDateString('en-IN',{weekday:'long',day:'2-digit',month:'long',year:'numeric',timeZone:'Asia/Kolkata'});
+const fmtTime=d=>d.toLocaleTimeString('en-IN',{hour:'2-digit',minute:'2-digit',timeZone:'Asia/Kolkata'});
+$$('.today').forEach(e=>e.textContent=fmtDate(now));
+
+let view='dash';
+function go(v){
+  view=v;
+  $$('.view').forEach(s=>s.hidden=s.dataset.v!==v);
+  $$('#side-nav [data-view]').forEach(a=>a.classList.toggle('on',a.dataset.view===v));
+  $$('#mob-nav [data-view]').forEach(b=>{if(b.dataset.view===v)b.setAttribute('aria-current','page');else b.removeAttribute('aria-current')});
+}
+$$('[data-view]').forEach(el=>el.addEventListener('click',()=>{go(el.dataset.view);if(tour.on)place()}));
+
+// approvals
+const APPR=[
+  {i:'PS',c:'p-green',n:'Priya Sharma',d:'Casual leave · 2 days'},
+  {i:'RK',c:'p-blue',n:'Rahul Kumar',d:'Sick leave · 1 day'},
+  {i:'SM',c:'p-amber',n:'Sneha Menon',d:'Regularization · missed punch'}
+];
+function drawAppr(){
+  const box=$('#appr-list');box.innerHTML='';
+  if(!APPR.length){box.innerHTML='<p style="font-size:13px;color:var(--subtle);padding:12px 0">All caught up. No approvals waiting.</p>'}
+  APPR.forEach((a,idx)=>{
+    const r=document.createElement('div');r.className='row';
+    r.innerHTML=`<div class="who"><span class="av ${a.c}">${a.i}</span><div><b>${a.n}</b><small>${a.d}</small></div></div><div class="mini-btns"><button class="approve-btn" type="button">Approve</button><button class="reject-btn" type="button">Reject</button></div>`;
+    r.querySelector('.approve-btn').onclick=()=>{APPR.splice(idx,1);drawAppr();toast(`Approved. ${a.n} has been notified and the leave ledger is updated.`)};
+    r.querySelector('.reject-btn').onclick=()=>{APPR.splice(idx,1);drawAppr();toast(`Rejected. ${a.n} has been notified.`)};
+    box.append(r);
+  });
+  $('#pending').textContent=APPR.length;
+  if(tour.on)place();
+}
+drawAppr();
+
+// clock
+let clocked=null;
+$('#clock-btn').onclick=()=>{
+  const b=$('#clock-btn'),st=$('#clock-status');
+  if(!clocked){clocked=new Date();$('#clock-time').textContent=fmtTime(clocked);st.className='pill p-green';st.textContent='Checked in · location verified';b.textContent='Clock out';b.classList.add('out');$('#present').textContent='231';toast('Clocked in at '+fmtTime(clocked)+' IST')}
+  else{st.className='pill p-gray';st.textContent='Checked out · '+fmtTime(new Date());b.textContent='Clocked out';b.disabled=true;b.style.opacity=.6;toast('Clocked out. Worked hours are added to your monthly snapshot.')}
+};
+
+// calendar (current month, IST)
+(function(){
+  const y=now.getFullYear(),m=now.getMonth(),today=now.getDate();
+  $('#cal-title').textContent=now.toLocaleDateString('en-IN',{month:'long',year:'numeric'});
+  const cal=$('#cal');['M','T','W','T','F','S','S'].forEach(d=>{const s=document.createElement('span');s.className='h';s.textContent=d;cal.append(s)});
+  const first=(new Date(y,m,1).getDay()+6)%7,days=new Date(y,m+1,0).getDate();
+  for(let i=0;i<first;i++){const s=document.createElement('span');s.className='W';cal.append(s)}
+  for(let d=1;d<=days;d++){
+    const s=document.createElement('span'),wd=(new Date(y,m,d).getDay()+6)%7;s.textContent=d;
+    if(wd>4)s.className='W';else if(d<today)s.className=d%9===0?'L':d%13===0?'A':'P';
+    if(d===today)s.style.outline='2px solid var(--charcoal)';
+    cal.append(s);
+  }
+})();
+
+// leave apply
+$('#apply-leave').onclick=()=>{
+  const rows=$('#leave-rows');if(rows.dataset.added)return toast('You already have a request waiting for approval.');
+  rows.dataset.added=1;
+  const d=new Date(now);d.setDate(d.getDate()+7);
+  const tr=document.createElement('tr');tr.innerHTML=`<td>Casual leave</td><td>${d.toLocaleDateString('en-IN',{day:'2-digit',month:'short'})}</td><td class="num">1</td><td><span class="pill p-amber">Pending</span></td>`;
+  rows.prepend(tr);$('#cl-bal').textContent='5';$('#cl-m').style.width='42%';
+  toast('Leave requested. Your manager has been notified.');
+};
+
+// payroll
+$('#run-pay').onclick=()=>{
+  const b=$('#run-pay');if(b.dataset.done)return;
+  b.textContent='Calculating…';b.disabled=true;
+  setTimeout(()=>{b.textContent='Payroll finalised';b.dataset.done=1;$('#pay-status').innerHTML='<span class="pill p-green">Finalised · locked</span>';toast('Payroll run for 248 employees. Payslips are ready.')},1100);
+};
+$$('#rep-export .exp').forEach(b=>b.onclick=()=>toast(`In your own workspace this downloads the report as ${b.textContent}.`));
+
+// roles
+const ROLE_NAME={'HR Admin':'Anita','Company Admin':'Vikram','Manager':'Rahul','Employee':'Priya'};
+$('#role-sel').onchange=e=>{
+  const r=e.target.value,admin=r==='HR Admin'||r==='Company Admin';
+  $('#greet').textContent=`Welcome back, ${ROLE_NAME[r]}`;
+  $$('[data-admin]').forEach(el=>el.hidden=!admin);
+  $('#approvals').hidden=r==='Employee';
+  $('#kpis').hidden=r==='Employee';
+  toast(`Now viewing as ${r}. ${admin?'Payroll and reports are visible.':r==='Manager'?'Managers see approvals, not payroll.':'Employees see only their own attendance and leave.'}`);
+  if(tour.on)place();
+};
+
+/* ---------- Guided tour ---------- */
+const STEPS=[
+  {center:true,icon:'i-users',title:'Welcome to the HRMS tour',text:'This 2-minute tour uses Acme Technologies, a demo company with 248 employees. You can click anything along the way.',next:'Start the tour',skip:'Explore on my own'},
+  {view:'dash',target:()=>visible('#side-nav')?'#side-nav':'#mob-nav',title:'Everything in one menu',text:'Dashboard, attendance, leave, payroll and reports. Each person sees only the sections their role allows.'},
+  {view:'dash',target:'#kpis',title:'Your company today',text:'Headcount, who is present, who is on leave and what needs approval, updated live.'},
+  {view:'dash',target:'#clock-card',title:'Clock in with one tap',text:'Employees clock in and out from their phone or laptop. Try it: press Clock in.'},
+  {view:'dash',target:'#approvals',title:'Approve leave in a click',text:'Leave and missed-punch requests land here for the manager. Approve one and watch the count drop.'},
+  {view:'att',target:'#att-cal',title:'The month at a glance',text:'Present days, leave, holidays and weekly offs on one calendar. Worked hours and late marks add up on their own.'},
+  {view:'leave',target:'#leave-bal',title:'Balances from the leave ledger',text:'Every credit and debit is a ledger entry, so the balance an employee sees is the one payroll uses.'},
+  {view:'leave',target:'#apply-leave',title:'Apply in seconds',text:'Employees apply here and the request goes straight to their manager. Try it.'},
+  {view:'pay',target:'#pay-table',title:'Statutory payroll, done for you',text:'EPF, ESI, Professional Tax and TDS are worked out for every employee, with LOP taken from attendance.'},
+  {view:'pay',target:'#run-pay',title:'Run payroll',text:'One click runs the month for everyone. Once finalised, the run is locked. Try it.'},
+  {view:'rep',target:'#rep-export',title:'Reports for month end',text:'Payroll cost, attendance and leave by department, ready to export for your finance team and CA.'},
+  {view:'dash',target:'#role',title:'See it as any role',text:'Switch between Company Admin, HR Admin, Manager and Employee to see what each person gets.'},
+  {center:true,icon:'i-check-c',title:"You've seen the basics",text:'Set up your own company in a few steps and use every feature free for 14 days. No card required.',final:true}
+];
+const spot=$('#spot'),pop=$('#pop');
+function visible(sel){const el=$(sel);if(!el)return false;const r=el.getBoundingClientRect();return r.width>0&&r.height>0&&getComputedStyle(el).display!=='none'}
+function targetEl(s){const t=typeof s.target==='function'?s.target():s.target;return t&&$(t)}
+
+function start(i=0){
+  if($('#role-sel').value!=='HR Admin'){$('#role-sel').value='HR Admin';$('#role-sel').dispatchEvent(new Event('change'))}
+  tour.on=true;spot.hidden=false;pop.hidden=false;$('#restart').hidden=true;show(i)}
+function end(){tour.on=false;spot.hidden=true;pop.hidden=true;$('#restart').hidden=false;try{localStorage.setItem('hrms_tour_seen','1')}catch(e){}}
+
+function show(i){
+  tour.i=i;const s=STEPS[i];
+  if(s.view)go(s.view);
+  const n=STEPS.length-2; // numbered steps exclude welcome and finish
+  $('#pop-count').textContent=s.center?'':`Step ${i} of ${n}`;
+  $('#pop-title').textContent=s.title;$('#pop-text').textContent=s.text;
+  $('#pop-ic').innerHTML=s.center?`<div class="welcome-ic"><svg><use href="#${s.icon}"/></svg></div>`:'';
+  $('#pop-bar').style.width=(i/(STEPS.length-1)*100)+'%';
+  $('#pop-bar').parentElement.hidden=!!s.center;
+  const back=$('#pop-back'),next=$('#pop-next'),skip=$('#pop-skip');
+  back.hidden=s.center;skip.hidden=!!s.final;skip.textContent=s.skip||'Skip tour';
+  const nb=pop.querySelector('.nb');
+  nb.querySelectorAll('.extra').forEach(e=>e.remove());
+  if(s.final){
+    next.textContent='Start free trial';
+    const a=document.createElement('a');a.className='btn btn-outline btn-sm extra';a.href='https://hrms-updated-25-09-2026.onrender.com/login';a.textContent='Open the live demo';
+    const k=document.createElement('button');k.className='btn btn-outline btn-sm extra';k.type='button';k.textContent='Keep exploring';k.onclick=end;
+    nb.prepend(a,k);
+  }else next.textContent=s.next||(i===STEPS.length-2?'Finish':'Next');
+  pop.classList.toggle('center',!!s.center);
+  if(s.center){spot.classList.add('none')}
+  else{
+    spot.classList.remove('none');
+    const el=targetEl(s);
+    if(el){const r=el.getBoundingClientRect(),mobile=innerWidth<=600;
+      const want=mobile?r.top-90:r.top-(innerHeight-r.height)/2;
+      if(r.top<70||r.bottom>innerHeight-(mobile?pop.offsetHeight+30:20))scrollBy({top:want,behavior:'instant'});}
+  }
+  place();
+  next.focus({preventScroll:true});
+}
+function place(){
+  if(!tour.on)return;const s=STEPS[tour.i];if(s.center)return;
+  const el=targetEl(s);if(!el){return}
+  const r=el.getBoundingClientRect(),p=6;
+  Object.assign(spot.style,{left:r.left-p+'px',top:r.top-p+'px',width:r.width+p*2+'px',height:r.height+p*2+'px'});
+  if(innerWidth<=600)return; // CSS docks the card at the bottom
+  const pw=pop.offsetWidth,ph=pop.offsetHeight,g=16,vw=innerWidth,vh=innerHeight;
+  let left,top;
+  if(r.right+g+pw<vw-8){left=r.right+g;top=r.top}
+  else if(r.left-g-pw>8){left=r.left-g-pw;top=r.top}
+  else if(r.bottom+g+ph<vh-8){top=r.bottom+g;left=r.left}
+  else{top=r.top-g-ph;left=r.left}
+  left=Math.min(Math.max(8,left),vw-pw-8);top=Math.min(Math.max(70,top),vh-ph-8);
+  pop.style.left=left+'px';pop.style.top=top+'px';
+}
+$('#pop-next').onclick=()=>{const s=STEPS[tour.i];if(s.final){location.href='signup.html';return}show(tour.i+1)};
+$('#pop-back').onclick=()=>show(Math.max(0,tour.i-1));
+$('#pop-skip').onclick=end;
+$('#restart').onclick=()=>start(1);
+document.addEventListener('keydown',e=>{
+  if(!tour.on)return;
+  if(e.key==='Escape')end();
+  if(e.key==='ArrowRight'&&!STEPS[tour.i].final)$('#pop-next').click();
+  if(e.key==='ArrowLeft'&&tour.i>0)show(tour.i-1);
+});
+let raf;const re=()=>{cancelAnimationFrame(raf);raf=requestAnimationFrame(place)};
+addEventListener('resize',re);addEventListener('scroll',re,{passive:true});
+start(0);
+</script>
+</body>
+</html>

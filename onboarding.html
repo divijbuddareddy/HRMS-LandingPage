@@ -1,0 +1,336 @@
+<!doctype html>
+<html lang="en-IN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Set up your company · AI Automation Labs HRMS</title>
+<meta name="description" content="Set up your company in AI Automation Labs HRMS: departments, leave policy, payroll and team.">
+<meta name="theme-color" content="#111827">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site.css">
+<link rel="stylesheet" href="pages.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23059669'/%3E%3Cpath d='M9 22v-1.5a4.5 4.5 0 0 1 4.5-4.5h5a4.5 4.5 0 0 1 4.5 4.5V22M16 13.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Z' fill='none' stroke='white' stroke-width='2.2' stroke-linecap='round'/%3E%3C/svg%3E">
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-user" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></symbol>
+    <symbol id="i-users" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></symbol>
+    <symbol id="i-check-c" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></symbol>
+    <symbol id="i-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="m15 9-6 6M9 9l6 6"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></symbol>
+    <symbol id="i-cal" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></symbol>
+    <symbol id="i-rupee" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h12M6 8h12M6 13l8.5 8M6 13h3a5 5 0 0 0 0-10"/></symbol>
+    <symbol id="i-building" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M9 22v-4h6v4M8 6h.01M16 6h.01M12 6h.01M12 10h.01M12 14h.01M16 10h.01M16 14h.01M8 10h.01M8 14h.01"/></symbol>
+    <symbol id="i-grid" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></symbol>
+    <symbol id="i-lock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></symbol>
+    <symbol id="i-file" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/></symbol>
+    <symbol id="i-chart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></symbol>
+    <symbol id="i-plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></symbol>
+    <symbol id="i-alert" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></symbol>
+    <symbol id="i-layers" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 2 10 5-10 5L2 7l10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></symbol>
+  </defs>
+</svg>
+
+<header class="topbar">
+  <div class="container">
+    <nav class="nav" aria-label="Main">
+      <a href="index.html" class="logo" aria-label="AI Automation Labs HRMS home">
+        <span class="logo-mark"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round"><path d="M5 20v-1a5 5 0 0 1 5-5h4a5 5 0 0 1 5 5v1"/><circle cx="12" cy="7" r="3.5"/></svg></span>
+        <span>AI Automation Labs HRMS<small>Core HR &amp; Payroll</small></span>
+      </a>
+      <div class="right"><span class="hide-sm" id="who"></span><a href="tour.html">Guided tour</a></div>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <div class="wiz">
+    <ol class="wiz-rail" id="rail" aria-label="Setup steps">
+      <li><button type="button" data-go="0"><span class="n">1</span>Company</button></li>
+      <li><button type="button" data-go="1"><span class="n">2</span>Teams and locations</button></li>
+      <li><button type="button" data-go="2"><span class="n">3</span>Leave and attendance</button></li>
+      <li><button type="button" data-go="3"><span class="n">4</span>Payroll</button></li>
+      <li><button type="button" data-go="4"><span class="n">5</span>Invite your team</button></li>
+      <li><button type="button" data-go="5"><span class="n">6</span>Finish</button></li>
+    </ol>
+
+    <div class="wiz-card">
+      <div class="progress"><i id="bar" style="width:16%"></i></div>
+
+      <!-- Step 1: Company -->
+      <section class="step" data-step="0">
+        <div class="wiz-head"><span class="kicker">Step 1 of 5</span><h2>Tell us about your company</h2><p>This sets up your workspace. You can change any of it later.</p></div>
+        <div class="wiz-body">
+          <div class="field"><label for="o-legal">Company name</label><input id="o-legal" data-k="company.name" placeholder="Acme Technologies Pvt Ltd"></div>
+          <div class="field">
+            <label for="o-slug">Workspace ID (tenant slug)</label>
+            <div class="prefix"><span>hrms /</span><input id="o-slug" data-k="company.slug" placeholder="acme-tech"></div>
+            <span class="hint">Your team enters this when they sign in. Lowercase letters, numbers and hyphens.</span>
+          </div>
+          <div class="two">
+            <div class="field"><label for="o-industry">Industry</label>
+              <select id="o-industry" data-k="company.industry">
+                <option>IT and software</option><option>Manufacturing</option><option>Retail</option><option>Healthcare</option><option>Education</option><option>Financial services</option><option>Hospitality</option><option>Logistics</option><option>Professional services</option><option>Other</option>
+              </select></div>
+            <div class="field"><label for="o-size">Number of employees</label>
+              <select id="o-size" data-k="company.size"><option>1–25</option><option selected>26–100</option><option>101–300</option><option>300+</option></select></div>
+          </div>
+          <div class="field"><label for="o-state">Head office state</label>
+            <select id="o-state" data-k="company.state">
+              <option>Andhra Pradesh</option><option>Assam</option><option>Bihar</option><option>Chhattisgarh</option><option>Delhi</option><option>Goa</option><option>Gujarat</option><option>Haryana</option><option>Jharkhand</option><option selected>Karnataka</option><option>Kerala</option><option>Madhya Pradesh</option><option>Maharashtra</option><option>Odisha</option><option>Punjab</option><option>Rajasthan</option><option>Tamil Nadu</option><option>Telangana</option><option>Uttar Pradesh</option><option>Uttarakhand</option><option>West Bengal</option><option>Other</option>
+            </select>
+            <span class="hint">Used for Professional Tax slabs and state holidays.</span></div>
+        </div>
+      </section>
+
+      <!-- Step 2: Teams -->
+      <section class="step" data-step="1" hidden>
+        <div class="wiz-head"><span class="kicker">Step 2 of 5</span><h2>Departments and locations</h2><p>We've added common departments. Remove what you don't need and add your own.</p></div>
+        <div class="wiz-body">
+          <h3>Departments</h3>
+          <div class="chips" id="dept-chips"></div>
+          <div class="add-row"><input id="dept-in" placeholder="Add a department, e.g. Customer Support" aria-label="New department"><button type="button" class="btn btn-outline btn-sm" id="dept-add">Add</button></div>
+          <h3 style="margin-top:8px">Office locations</h3>
+          <div class="chips" id="loc-chips"></div>
+          <div class="add-row"><input id="loc-in" placeholder="Add a location, e.g. Pune" aria-label="New location"><button type="button" class="btn btn-outline btn-sm" id="loc-add">Add</button></div>
+        </div>
+      </section>
+
+      <!-- Step 3: Leave & attendance -->
+      <section class="step" data-step="2" hidden>
+        <div class="wiz-head"><span class="kicker">Step 3 of 5</span><h2>Leave and attendance</h2><p>Set yearly leave, working days and office hours. Balances are credited to each employee's leave ledger.</p></div>
+        <div class="wiz-body">
+          <h3>Leave per year</h3>
+          <div class="leave-grid">
+            <div class="field"><label for="o-cl">Casual leave</label><input id="o-cl" type="number" min="0" max="60" data-k="leave.cl"><span class="hint">Days per year</span></div>
+            <div class="field"><label for="o-sl">Sick leave</label><input id="o-sl" type="number" min="0" max="60" data-k="leave.sl"><span class="hint">Days per year</span></div>
+            <div class="field"><label for="o-el">Earned leave</label><input id="o-el" type="number" min="0" max="60" data-k="leave.el"><span class="hint">Days per year, carried forward</span></div>
+          </div>
+          <h3>Weekly off</h3>
+          <div class="days" id="days"></div>
+          <div class="two">
+            <div class="field"><label for="o-start">Office starts</label><input id="o-start" type="time" data-k="att.start"></div>
+            <div class="field"><label for="o-end">Office ends</label><input id="o-end" type="time" data-k="att.end"></div>
+          </div>
+          <div class="field"><label for="o-grace">Late mark after</label>
+            <select id="o-grace" data-k="att.grace"><option value="0">On time, no grace</option><option value="10">10 minutes</option><option value="15" selected>15 minutes</option><option value="30">30 minutes</option></select></div>
+          <label class="toggle"><input type="checkbox" data-k="leave.holidays"><div><b>Add India's national holidays</b><span>Republic Day, Independence Day, Gandhi Jayanti and festival holidays for the year.</span></div></label>
+        </div>
+      </section>
+
+      <!-- Step 4: Payroll -->
+      <section class="step" data-step="3" hidden>
+        <div class="wiz-head"><span class="kicker">Step 4 of 5</span><h2>Payroll and compliance</h2><p>Choose when you pay and which statutory deductions apply. HRMS calculates them on every pay run.</p></div>
+        <div class="wiz-body">
+          <div class="two">
+            <div class="field"><label for="o-payday">Salary paid on</label>
+              <select id="o-payday" data-k="pay.day"><option value="last">Last working day of the month</option><option value="1">1st of next month</option><option value="5">5th of next month</option><option value="7">7th of next month</option><option value="10">10th of next month</option></select></div>
+            <div class="field"><label for="o-cutoff">Attendance cut-off</label>
+              <select id="o-cutoff" data-k="pay.cutoff"><option value="end">End of the month</option><option value="25">25th of the month</option><option value="20">20th of the month</option></select>
+              <span class="hint">Days after the cut-off count in next month's pay.</span></div>
+          </div>
+          <div class="field"><label for="o-struct">Default salary structure</label>
+            <select id="o-struct" data-k="pay.structure"><option>Standard Tech CTC (Basic 40%, HRA 20%, Special allowance)</option><option>Manufacturing CTC (Basic 50%, HRA 10%, Conveyance)</option><option>Simple CTC (Basic 50%, HRA 25%, Other)</option><option>I'll set up my own</option></select></div>
+          <h3>Statutory deductions</h3>
+          <div class="toggles">
+            <label class="toggle"><input type="checkbox" data-k="stat.epf"><div><b>EPF</b><span>12% employee and employer provident fund.</span></div></label>
+            <label class="toggle"><input type="checkbox" data-k="stat.esi"><div><b>ESI</b><span>For employees earning up to ₹21,000 a month.</span></div></label>
+            <label class="toggle"><input type="checkbox" data-k="stat.pt"><div><b>Professional Tax</b><span id="pt-state">As per your head office state's slabs.</span></div></label>
+            <label class="toggle"><input type="checkbox" data-k="stat.tds"><div><b>TDS on salary</b><span>Monthly tax deduction under the chosen tax regime.</span></div></label>
+          </div>
+        </div>
+      </section>
+
+      <!-- Step 5: Invite -->
+      <section class="step" data-step="4" hidden>
+        <div class="wiz-head"><span class="kicker">Step 5 of 5</span><h2>Invite your team</h2><p>Add the people who will help run HR. Everyone signs in as themselves, and their role decides what they can see.</p></div>
+        <div class="wiz-body">
+          <div id="invites" class="stack"></div>
+          <button type="button" class="link-btn" id="add-invite"><svg><use href="#i-plus"/></svg>Add another person</button>
+          <p class="hint" style="color:var(--subtle);font-size:13.5px">You can skip this and invite people later, or bring in all employees at once from a spreadsheet after setup.</p>
+        </div>
+      </section>
+
+      <!-- Finish -->
+      <section class="step" data-step="5" hidden>
+        <div class="wiz-body">
+          <div class="done-hero">
+            <div class="big"><svg><use href="#i-check"/></svg></div>
+            <h2>Your setup is ready</h2>
+            <p>Send it to our team and we'll create your company workspace with these settings. Your 14-day trial starts the day your workspace goes live.</p>
+          </div>
+          <div class="summary" id="summary"></div>
+          <div class="next-grid">
+            <button type="button" class="next" id="send-setup"><b>Send my setup</b><span>Opens your email app with the setup filled in, addressed to our team.</span><span class="go">Send setup <svg><use href="#i-arrow"/></svg></span></button>
+            <a class="next" href="tour.html"><b>Take the guided tour</b><span>See how attendance, leave and payroll work in the demo company while you wait.</span><span class="go">Start the tour <svg><use href="#i-arrow"/></svg></span></a>
+            <a class="next" href="https://hrms-updated-25-09-2026.onrender.com/login"><b>Open the live demo</b><span>Sign in with a demo account: Company Admin, HR Admin, Manager or Employee.</span><span class="go">Open HRMS <svg><use href="#i-arrow"/></svg></span></a>
+            <a class="next" href="index.html#contact"><b>Book assisted onboarding</b><span>We set up your salary structures, leave policies and employee import with you.</span><span class="go">Talk to us <svg><use href="#i-arrow"/></svg></span></a>
+          </div>
+          <p class="status-msg" id="send-msg" role="status" hidden></p>
+        </div>
+      </section>
+
+      <div class="wiz-foot" id="foot">
+        <span class="left" id="saved">Progress is saved on this device.</span>
+        <div class="btns">
+          <button type="button" class="btn btn-outline btn-sm" id="back">Back</button>
+          <button type="button" class="btn btn-primary btn-sm" id="next">Continue <svg><use href="#i-arrow"/></svg></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<script>
+const CONTACT_EMAIL='your-email@example.com'; // TODO: replace with your onboarding / sales email
+const KEY='hrms_onboarding';
+const load=()=>{try{return JSON.parse(localStorage.getItem(KEY))||{}}catch(e){return{}}};
+const persist=()=>{try{localStorage.setItem(KEY,JSON.stringify(S))}catch(e){}};
+
+const DEFAULTS={
+  company:{name:'',slug:'',industry:'IT and software',size:'26–100',state:'Karnataka'},
+  depts:['Engineering','Sales','Operations','HR & Finance'],
+  locs:['Bengaluru'],
+  leave:{cl:12,sl:12,el:15,holidays:true},
+  att:{start:'09:30',end:'18:30',grace:'15',off:['Sat','Sun']},
+  pay:{day:'last',cutoff:'end',structure:'Standard Tech CTC (Basic 40%, HRA 20%, Special allowance)'},
+  stat:{epf:true,esi:true,pt:true,tds:true},
+  invites:[{email:'',role:'HR Admin'}],
+  step:0,maxStep:0
+};
+const saved=load();
+const S=Object.assign(structuredClone(DEFAULTS),saved);
+for(const k of ['company','leave','att','pay','stat'])S[k]=Object.assign({},DEFAULTS[k],saved[k]||{});
+if(S.account&&!S.company.name)S.company.name=S.account.company||'';
+if(S.account)document.getElementById('who').textContent=S.account.name?`Signed up as ${S.account.name}`:'';
+
+const slugify=s=>s.toLowerCase().replace(/\b(pvt|private|ltd|limited|llp|inc)\b\.?/g,'').replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,'').slice(0,30);
+if(!S.company.slug&&S.company.name)S.company.slug=slugify(S.company.name);
+
+// bind simple fields
+const get=p=>p.split('.').reduce((o,k)=>o?.[k],S);
+const set=(p,v)=>{const ks=p.split('.');ks.slice(0,-1).reduce((o,k)=>o[k],S)[ks.at(-1)]=v;persist()};
+document.querySelectorAll('[data-k]').forEach(el=>{
+  const v=get(el.dataset.k);
+  if(el.type==='checkbox')el.checked=!!v;else if(v!==undefined)el.value=v;
+  el.addEventListener(el.type==='checkbox'||el.tagName==='SELECT'?'change':'input',()=>{
+    set(el.dataset.k,el.type==='checkbox'?el.checked:el.type==='number'?Number(el.value):el.value);
+    if(el.dataset.k==='company.state')ptText();
+  });
+});
+const nameIn=document.getElementById('o-legal'),slugIn=document.getElementById('o-slug');
+let slugTouched=!!saved.company?.slug;
+nameIn.addEventListener('input',()=>{if(!slugTouched){slugIn.value=slugify(nameIn.value);set('company.slug',slugIn.value)}});
+slugIn.addEventListener('input',()=>{slugTouched=true;slugIn.value=slugIn.value.toLowerCase().replace(/[^a-z0-9-]/g,'');set('company.slug',slugIn.value)});
+function ptText(){document.getElementById('pt-state').textContent=`As per ${S.company.state} slabs.`}
+ptText();
+
+// chips
+function chips(listKey,boxId,inId,btnId){
+  const box=document.getElementById(boxId),inp=document.getElementById(inId);
+  const draw=()=>{box.innerHTML='';S[listKey].forEach((t,i)=>{const c=document.createElement('span');c.className='chip';c.textContent=t;const b=document.createElement('button');b.type='button';b.setAttribute('aria-label','Remove '+t);b.textContent='×';b.onclick=()=>{S[listKey].splice(i,1);persist();draw()};c.append(b);box.append(c)})};
+  const add=()=>{const v=inp.value.trim();if(v&&!S[listKey].includes(v)){S[listKey].push(v);persist();draw()}inp.value='';inp.focus()};
+  document.getElementById(btnId).onclick=add;
+  inp.addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();add()}});
+  draw();
+}
+chips('depts','dept-chips','dept-in','dept-add');
+chips('locs','loc-chips','loc-in','loc-add');
+
+// weekly off
+const daysBox=document.getElementById('days');
+['Mon','Tue','Wed','Thu','Fri','Sat','Sun'].forEach(d=>{
+  const l=document.createElement('label');l.innerHTML=`<input type="checkbox" value="${d}"><span>${d}</span>`;
+  const cb=l.querySelector('input');cb.checked=S.att.off.includes(d);
+  cb.onchange=()=>{S.att.off=cb.checked?[...S.att.off,d]:S.att.off.filter(x=>x!==d);persist()};
+  daysBox.append(l);
+});
+
+// invites
+const inv=document.getElementById('invites');
+const ROLES=['Company Admin','HR Admin','Manager','Employee'];
+function drawInvites(){
+  inv.innerHTML='';
+  S.invites.forEach((p,i)=>{
+    const r=document.createElement('div');r.className='invite-row';
+    r.innerHTML=`<input type="email" placeholder="colleague@company.in" aria-label="Email for person ${i+1}" id="inv-email-${i}"><select aria-label="Role for person ${i+1}" id="inv-role-${i}">${ROLES.map(x=>`<option>${x}</option>`).join('')}</select><button type="button" class="icon-btn" aria-label="Remove person ${i+1}">×</button>`;
+    const [e,s,b]=r.children;e.value=p.email;s.value=p.role;
+    e.oninput=()=>{p.email=e.value.trim();persist()};s.onchange=()=>{p.role=s.value;persist()};
+    b.onclick=()=>{S.invites.splice(i,1);if(!S.invites.length)S.invites.push({email:'',role:'Employee'});persist();drawInvites()};
+    inv.append(r);
+  });
+}
+document.getElementById('add-invite').onclick=()=>{S.invites.push({email:'',role:'Manager'});persist();drawInvites();inv.querySelector('.invite-row:last-child input').focus()};
+drawInvites();
+
+// validation per step
+function validate(step){
+  if(step===0){
+    const okN=S.company.name.trim().length>1,okS=/^[a-z0-9][a-z0-9-]{1,29}$/.test(S.company.slug);
+    nameIn.setAttribute('aria-invalid',!okN);slugIn.setAttribute('aria-invalid',!okS);
+    if(!okN){nameIn.focus();return false}if(!okS){slugIn.focus();return false}
+  }
+  if(step===4){
+    const bad=S.invites.findIndex(p=>p.email&&!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(p.email));
+    if(bad>-1){const el=document.getElementById('inv-email-'+bad);el.setAttribute('aria-invalid','true');el.focus();return false}
+  }
+  return true;
+}
+
+// summary
+const fmtPay={last:'Last working day','1':'1st of next month','5':'5th of next month','7':'7th of next month','10':'10th of next month'};
+function summary(){
+  const st=Object.entries(S.stat).filter(([,v])=>v).map(([k])=>({epf:'EPF',esi:'ESI',pt:'PT',tds:'TDS'}[k])).join(', ')||'None';
+  const people=S.invites.filter(p=>p.email);
+  const items=[
+    ['Company',`${S.company.name} · ${S.company.size} employees · ${S.company.state}`],
+    ['Workspace ID',S.company.slug],
+    ['Departments',S.depts.join(', ')||'None yet'],
+    ['Locations',S.locs.join(', ')||'None yet'],
+    ['Leave per year',`CL ${S.leave.cl} · SL ${S.leave.sl} · EL ${S.leave.el}${S.leave.holidays?' · National holidays':''}`],
+    ['Office hours',`${S.att.start}–${S.att.end} · Late after ${S.att.grace} min · Off: ${S.att.off.join(', ')||'none'}`],
+    ['Payroll',`Paid ${fmtPay[S.pay.day]} · ${S.pay.structure.split(' (')[0]}`],
+    ['Statutory',st],
+    ['Team invites',people.length?people.map(p=>`${p.email} (${p.role})`).join(', '):'None yet']
+  ];
+  const box=document.getElementById('summary');box.innerHTML='';
+  items.forEach(([k,v])=>{const d=document.createElement('div');d.innerHTML='<small></small><p></p>';d.children[0].textContent=k;d.children[1].textContent=v;box.append(d)});
+  return items;
+}
+document.getElementById('send-setup').onclick=()=>{
+  const lines=summary().map(([k,v])=>`${k}: ${v}`);
+  const a=S.account||{};
+  const body=`New HRMS workspace request\n\nContact: ${a.name||''} · ${a.email||''} · +91 ${a.phone||''}\n\n${lines.join('\n')}`;
+  location.href=`mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent('HRMS setup: '+S.company.name)}&body=${encodeURIComponent(body)}`;
+  const m=document.getElementById('send-msg');m.hidden=false;m.textContent=`Your email app should open with your setup filled in. If it doesn't, write to ${CONTACT_EMAIL}.`;
+};
+
+// navigation
+const steps=[...document.querySelectorAll('.step')],rail=[...document.querySelectorAll('#rail button')];
+const back=document.getElementById('back'),next=document.getElementById('next'),foot=document.getElementById('foot');
+let firstShow=true;
+function show(i){
+  S.step=i;S.maxStep=Math.max(S.maxStep||0,i);persist();
+  steps.forEach((s,j)=>s.hidden=j!==i);
+  rail.forEach((b,j)=>{b.toggleAttribute('aria-current',false);if(j===i)b.setAttribute('aria-current','step');b.classList.toggle('done',j!==i&&j<S.maxStep);b.disabled=j>S.maxStep;b.querySelector('.n').innerHTML=b.classList.contains('done')?'<svg><use href="#i-check"/></svg>':j+1});
+  document.getElementById('bar').style.width=((i+1)/6*100)+'%';
+  back.hidden=i===0;
+  if(i===5){summary();foot.hidden=true}else{foot.hidden=false;next.innerHTML=i===4?'Finish setup <svg><use href="#i-arrow"/></svg>':'Continue <svg><use href="#i-arrow"/></svg>'}
+  if(firstShow){firstShow=false;return}
+  window.scrollTo({top:0,behavior:'smooth'});
+  const h=steps[i].querySelector('h2');if(h){h.tabIndex=-1;h.focus({preventScroll:true})}
+}
+next.onclick=()=>{if(validate(S.step))show(S.step+1)};
+back.onclick=()=>show(Math.max(0,S.step-1));
+rail.forEach((b,j)=>b.onclick=()=>{if(j<=S.maxStep&&(j<=S.step||validate(S.step)))show(j)});
+show(Math.min(S.step||0,5));
+</script>
+</body>
+</html>
